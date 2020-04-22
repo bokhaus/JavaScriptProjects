@@ -1,4 +1,5 @@
 # JavaScriptProjects
+The following projects are in this repo.
 1. Generic project
 2. AgeInDays
 3. Picture Generator
