@@ -7,7 +7,7 @@
 
 .flex-box-container-1, .flex-box-container-2 { /*Style for flex box*/
     display: flex;
-    border: 5px solid black
+    border: 5px solid black;
     padding: 10px;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -30,7 +30,7 @@
     width: 150px; /*sizes the width for the individual image*/
 }
 
-.flex-box-container-rps{ /*Style for flex box*/
+.flex-box-rps{ /*Style for flex box*/
     display: flex;
     border: 1px solid rgba(170, 50, 220, .6);
     padding: 10px;
@@ -43,6 +43,12 @@
     width: 75%;
     margin: 0 auto;
     text-align: center;
+}
+
+.flex-box-rps img:hover{
+    box-shadow: 0px 10px 50px rgba( 170, 50, 220, .6); /*provides shadow around picture*/
+
+
 }
 
 
