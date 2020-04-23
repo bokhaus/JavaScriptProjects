@@ -46,9 +46,7 @@
 }
 
 .flex-box-rps img:hover{
-    box-shadow: 0px 10px 50px rgba( 170, 50, 220, .6); /*provides shadow around picture*/
-
-
+    box-shadow: 0px 10px 50px rgba( 170, 50, 220, .6); /*provides shadow around picture when hovering on it*/
 }
 
 
