@@ -1,5 +1,5 @@
 # JavaScriptProjects
-The following JS projects are in this repo.
+The following JS projects are in this repository.
 1. Generic project
 2. AgeInDays
 3. Picture Generator
@@ -8,4 +8,4 @@ The following JS projects are in this repo.
 6. Black Jack
 7. 
 
-The following Angular Projects are in this repo.
+The following Angular Projects are in this repository.
