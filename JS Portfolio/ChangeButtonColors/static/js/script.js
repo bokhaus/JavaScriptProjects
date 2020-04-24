@@ -5,9 +5,8 @@ let copyAllButtons = []; //Copy state of button colors before change in the arra
 for(let i=0; i< all_buttons.length; i++) {
     copyAllButtons.push(all_buttons[i].classList[1]);  //Loop through all buttons and get the button's second class then push to current state to the array
 }
-console.log(copyAllButtons);
 
-//Main controller function
+//Main controller function - coould have used a switch here as well. 
 function buttonColorChange(colorSelect) { //Used in HTML onchange in form.
    if(colorSelect.value == 'red') {
        buttonsRed();
@@ -22,7 +21,6 @@ function buttonColorChange(colorSelect) { //Used in HTML onchange in form.
    }else if (colorSelect.value == 'no style') {
        noColor();
    }
-   console.log(colorSelect.value);
 }
 
 // Functions to change colors and reset to original
@@ -54,13 +52,6 @@ function buttonsReset() {
     }
 }
 
-function randomColors() {
-    for (let i=0; i< all_buttons.length; i++) {
-        all_buttons[i].classList.remove(all_buttons[i].classList[1]); // got to each button, access class list and remove the second class. 
-        all_buttons[i].classList.add('btn-warning'); //add class to all buttons.
-    }
-}
-
 function noColor() {
     for (let i=0; i< all_buttons.length; i++) {
         all_buttons[i].classList.remove(all_buttons[i].classList[1]); // got to each button, access class list and remove the second class. 
@@ -73,9 +64,9 @@ function randomColors() {
     for (let i=0; i< all_buttons.length; i++) {
         /* randomNumber used inside of the loop or it would store the random number once and continually 
         use this number and not calculate it again.*/
-        let randomNumber = Math.floor(Math.random() * 4);
+        let randomNumber = Math.floor(Math.random() * 4); // For each [i] run the random generator.
         all_buttons[i].classList.remove(all_buttons[i].classList[1]); // got to each button, access class list and remove the second class. 
-        all_buttons[i].classList.add(choices[randomNumber]); //add class to all buttons.
+        all_buttons[i].classList.add(choices[randomNumber]); //add random class to all buttons.
     }
 }
 
