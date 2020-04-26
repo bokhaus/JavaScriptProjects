@@ -2,7 +2,7 @@
 
 //BlackJack Object
 let blackjackGame = {
-    'you': { 'scoreSpan': '#your-blackjack-result', 'div': '#your-box', 'score':0},
+    'you': { 'scoreSpan': '#your-blackjack-result', 'div': '#you-box', 'score':0},
     'dealer': { 'scoreSpan': '#dealer-blackjack-result', 'div': '#dealer-box', 'score':0},
 };
 
