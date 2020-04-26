@@ -16,12 +16,12 @@
 }
 
 .flex-blackjack-row-1, .flex-blackjack-row-2 {
-    background: url("static/images/pokerTableTwo.png"); /*centers image  - (center;)*/
-    background: rgb(4, 82, 4); /* Green background with 100% opacity in case image does not work*/
+    background-image: url('../images/pokerTableTwo.png'); /*centers image  - (center;)*/
+    background-size: cover; /* sets the background image to cover the whole div.*/
     color: #ffffff; /*text color*/
 }
 
-.flex-blackjack-row-1{
+.flex-blackjack-row-1 div{
     border: 1px solid black;
     padding: 10px;
     flex: 1; /* Gives the flex boxes equal impotance (same space) */
@@ -29,14 +29,20 @@
     text-align: center;
 }
 
-.flex-blackjack-row-2 button{
-    border: 1px solid black;
-    padding: 5px;
+.flex-blackjack-row-1 img {
+    width: 30%;
+    padding: 10px;
+
 }
 
 .flex-blackjack-row-2 div {
     border: 1px solid black;
     padding: 10px;
+}
+
+.flex-blackjack-row-2 button{
+    border: 1px solid black;
+    padding: 5px;
 }
 
 table, th, td{ /* formats table in row 3*/
@@ -45,8 +51,4 @@ table, th, td{ /* formats table in row 3*/
     text-align: center;
 }
 
-.flex-blackjack-row-1 img {
-    width: 25%;
-    padding: 10px;
 
-}
