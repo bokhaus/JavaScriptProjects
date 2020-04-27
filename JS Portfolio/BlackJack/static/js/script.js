@@ -196,6 +196,7 @@ function computeWinner() {
 
 }
 
+// Display w/l/d in table
 function showResult(winner) {
     let message, messageColor;
 
