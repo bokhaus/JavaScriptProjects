@@ -41,6 +41,9 @@ function blackjackHit() {
         updateScore(card, YOU);
         showScore(YOU);
     }
+    if(YOU['score'] > 21){
+        dealerLogic();
+    }
 }
 
 // Selects a random card from the card index in blackjackGame().
@@ -99,7 +102,7 @@ function blackjackDeal() {
 
     if(blackjackGame['turnOver'] === true) {
 
-        blackjackGame['isStand'] = false; //allows stand button to be used
+        blackjackGame['isStand'] = false; //deactivates stand button to be used
         //Query selects "your-box" and then selects all images inside 'your-box
         let yourImages = document.querySelector('#your-box').querySelectorAll('img');
         let dealerImages = document.querySelector('#dealer-box').querySelectorAll('img');
@@ -124,25 +127,31 @@ function blackjackDeal() {
         document.querySelector('#blackjack-result').textContent = 'Let\'s Play'; // change message header
         document.querySelector('#blackjack-result').style.color = 'white';
 
-        blackjackGame['turnOver'] = true; //changes state of deal button, allows button to work.
+        blackjackGame['turnOver'] = true; //changes state of deal button, deactivates button.
     }
 }
 
-// stand button
-function dealerLogic() { // Transfers control from the person to the dealer bot to complete game
-    blackjackGame['isStand'] = true; // disables stand button for user.
-    let card = randomCard();
-    showCard(card, DEALER);
-    updateScore(card,DEALER);
-    showScore(DEALER);
+//pause the bot turns instead of all at once.
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 
-    // if dealer is above 15 compute the winner
-    if(DEALER['score'] > 15) {
-        blackjackGame['turnOver'] = true;
-        let winner = computeWinner();
-        showResult(winner);
-        console.log(blackjackGame['turnOver']);
+}
+// asynchronus function on the (stand button).
+async function dealerLogic() { // Transfers control from the person to the dealer bot to complete game
+    blackjackGame['isStand'] = true; // disables stand button for user.
+
+    while(DEALER['score'] < 16 && blackjackGame['isStand'] === true){ //creates bot for auto play dealer
+        await sleep(700);
+        let card = randomCard();
+        showCard(card, DEALER);
+        updateScore(card,DEALER);
+        showScore(DEALER);
+        
     }
+
+    blackjackGame['turnOver'] = true;
+    let winner = computeWinner();
+    showResult(winner);
 }
 
 // Comupute winner and return who won
