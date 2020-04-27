@@ -107,7 +107,7 @@ function blackjackDeal() {
         let yourImages = document.querySelector('#your-box').querySelectorAll('img');
         let dealerImages = document.querySelector('#dealer-box').querySelectorAll('img');
         
-        // Uses for loop for repetitive task of removing images from div.
+        // Use for loop when doing repetitive tasks.
         for(i=0; i< yourImages.length; i++){
             yourImages[i].remove();
         }
@@ -187,9 +187,11 @@ function computeWinner() {
         blackjackGame['draws']++;
         console.log('You drew!');
     }
-
+    //testing
     console.log('Winner is', winner);
     console.log(blackjackGame);
+
+    //returns winner
     return winner;
 
 }
