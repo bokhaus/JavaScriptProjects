@@ -3,7 +3,7 @@
 //BlackJack Object
 let blackjackGame = {
     //Dictionary for the balckjack game
-    'you': { 'scoreSpan': '#your-blackjack-result', 'div': '#your-box', 'score':0, 'scoreMessage': 'Busted'},
+    'you': { 'scoreSpan': '#your-blackjack-result', 'div': '#your-box', 'score':0},
     'dealer': { 'scoreSpan': '#dealer-blackjack-result', 'div': '#dealer-box', 'score':0},
     'cards': ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'K', 'J', 'Q', 'A'],
     'cardMap': {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8':8, '9': 9, //Maps each card to its value
@@ -14,12 +14,14 @@ const YOU = blackjackGame['you']
 const DEALER = blackjackGame['dealer']
 
 const hitSound = new Audio('static/sounds/swish.m4a'); //hit sound
+const winSound = new Audio('static/sounds/cash.mp3'); //winning sound
+const lossSound = new Audio('static/sounds/aww.mp3'); //loss sound
 
 
 /*Selects HTML id= (i.e.,"blackjack-hit-button") and when the button is clicked, it will run 
-the function blackjackHit */
+the corresponding function*/
 document.querySelector('#blackjack-hit-button').addEventListener('click', blackjackHit);  
-document.querySelector('#blackjack-stand-button').addEventListener('click', blackjackStand);  
+document.querySelector('#blackjack-stand-button').addEventListener('click', dealerLogic);  
 document.querySelector('#blackjack-deal-button').addEventListener('click', blackjackDeal);  
 
 /* Hit function calls show card function*/
@@ -82,12 +84,10 @@ function showScore(activePlayer) {
     }
 }
 
-function blackjackStand() {
-    alert('I am going to stand here'); //test function
-}
-
 /* Removes images from both divs in row one when Deal is clicked */
 function blackjackDeal() {
+    // showResult(computeWinner()); - if you want to make the game two player, place this function here
+
     //Query selects "your-box" and then selects all images inside 'your-box
     let yourImages = document.querySelector('#your-box').querySelectorAll('img');
     let dealerImages = document.querySelector('#dealer-box').querySelectorAll('img');
@@ -107,9 +107,69 @@ function blackjackDeal() {
     document.querySelector('#your-blackjack-result').textContent = '0';
     document.querySelector('#your-blackjack-result').style.color = '#ffffff';
     document.querySelector('#dealer-blackjack-result').textContent = '0';
-    document.querySelector('#your-blackjack-result').style.color = '#ffffff';
+    document.querySelector('#dealer-blackjack-result').style.color = '#ffffff';
 }
 
+function dealerLogic() { // Transfers control from the person to the dealer bot to complete game
+    //alert('I am going to stand here'); //test function
+    let card = randomCard();
+    showCard(card, DEALER);
+    updateScore(card,DEALER);
+    showScore(DEALER);
+}
 
+// Comupute winner and return who won
+function computeWinner() {
+    let winner; //declare variable
 
+    if(YOU['score'] <= 21) {
+       // condition:  higher score than the dealer or when the dealer busts but player is under 21.
+       if (YOU['score'] > DEALER['score'] || (DEALER['score'] > 21)) {
+        console.log('You won');
+        winner = YOU;
 
+       }else if (YOU['score'] < DEALER['score']) {
+        console.log('You lost');
+        winner = DEALER;
+
+       }else if (YOU['score'] === DEALER['score']) {
+           console.log('You tied!');
+       }
+    
+    // condition: when user busts but dealer doesn't
+    } else if (YOU['score'] > 21 && DEALER['score'] <= 21 ) {
+        console.log('You Lost!');
+        winner = DEALER;
+    
+    //condition: when user AND dealer both bust
+    }else if (YOU['score'] > 21 && DEALER['score'] > 21 ) {
+        console.log('You drew!');
+    }
+
+    console.log('Winner is', winner);
+    return winner;
+
+}
+
+function showResult(winner) {
+    let message, messageColor;
+
+    if(winner === YOU) {
+        message = 'You WON!!!'
+        messageColor = 'green';
+        winSound.play();
+
+    }else if (winner === DEALER) {
+        message = 'You Lost!!!';
+        messageColor = 'red';
+        lossSound.play();
+
+    } else {
+        message = 'It\'s a draw!';
+        messageColor = 'yellow';
+    }
+
+    document.querySelector('#blackjack-result').textContent = message;
+    document.querySelector('#blackjack-result').style.color = messageColor;
+
+}
