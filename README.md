@@ -6,6 +6,6 @@ The following JS projects are in this repository.
 4. Rock, Paper, Scissors
 5. Change Button Color
 6. Black Jack
-7. PigGame
+7. DiceGame
 
 The following Angular Projects are in this repository.
