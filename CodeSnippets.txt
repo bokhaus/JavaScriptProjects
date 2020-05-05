@@ -1,0 +1,8 @@
+Scratch pad for code snippets
+
+
+Alert button
+<button className="square" onClick={function() {alert('click'); }}>
+
+Best practice - forgetting the arrow will fire the alert every time the component re-renders
+<button className="square" onClick={() => alert('click')}>
