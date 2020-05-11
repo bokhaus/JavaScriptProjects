@@ -215,7 +215,7 @@ let controller = (function(budgetCtrl, UICtrl){
 
     };
     return{
-        init: function(){ //Public nitialization function to start the program.
+        init: function(){ //Public initialization function to start the program.
             console.log('Application has started');
             setupEventListeners();
         }
@@ -227,4 +227,3 @@ let controller = (function(budgetCtrl, UICtrl){
 //Public Initialization function call
 controller.init();
 
-//test message
