@@ -66,7 +66,6 @@ let budgetController = (function(){
             }else {
                 ID = 0;
             }
-            
 
             //Create New Item based on 'inc' or 'exp' type
             if(type === 'exp') {
@@ -143,7 +142,6 @@ let UIController = (function(){
 
             }
 
-            
             //2. Replace placeholder text with some actual data
             newHtml = html.replace('%id%', obj.id);
             newHtml = newHtml.replace('%description%', obj.description);
@@ -153,6 +151,29 @@ let UIController = (function(){
             //Inserted as a child in the specified container as the last item in the list.
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
         },
+
+        //Clear fields after enter of input
+        clearFields: function(){
+            let fields, fieldsArr;
+            
+            //clears user input data to allow for another value to be created.
+            //querySelectorAll returns a list and not an array. Must convert list to an array
+            fields = document.querySelectorAll(DOMStrings.inputDescription + ', ' + DOMStrings.inputValue);
+
+            //Use Array prototype to call slice method. This trick then returns a copy of the list as an array
+            //Pass list into the array 
+            //Functtion constructor for ALL Arrays
+            fieldsArr = Array.prototype.slice.call(fields);
+
+            //Callback function can access up to 3 items
+            //the foreach loop moves over all elements and sets the value to empty set.
+            fieldsArr.forEach(function (current, index, array) {
+                current.value = "";                 
+            });
+             
+            //set focus back on the description by using the array created from the list
+            fieldsArr[0].focus();
+        },  
 
         //Make DOMStrings Public
         getDomStrings: function(){
@@ -209,9 +230,12 @@ let controller = (function(budgetCtrl, UICtrl){
         // 3. Add new item to the user UI
         UICtrl.addListItem(newItem, input.type);
 
+        // 4. Clear Fields
+        UICtrl.clearFields();
 
-        // 4. Calculate the budget
-        // 5. Display the budget in the UI  
+
+        // 5. Calculate the budget
+        // 6. Display the budget in the UI  
 
     };
     return{
