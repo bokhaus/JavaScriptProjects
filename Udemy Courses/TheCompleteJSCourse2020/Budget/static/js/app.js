@@ -20,6 +20,18 @@ let budgetController = (function(){
         this.value = value;
     };
 
+    let calcTotal = function(type){
+        let sum = 0;
+        data.allItems[type].forEach(function(current){
+            sum += current.value;
+        
+        });
+
+        // Public Method
+        // Stores the calculation in the object array totals
+        data.totals[type] = sum;
+    };
+
     // Data structure to recieve information from the user 
     let allExpenses = [];
     let allIncomes = [];
@@ -34,7 +46,9 @@ let budgetController = (function(){
         totals: {
             exp: 0,
             inc: 0,
-        }
+        },
+        budget: 0,
+        percentage: -1 // initialized to -1 to symbolize it doesn't exist
     };
     //Public function to return the info from the data structure
     return {
@@ -80,6 +94,40 @@ let budgetController = (function(){
             //Return the new item/element
             return newItem;
         },
+        calculateBudget: function() {
+
+            // 1, Calculate total Income and total expenses
+            calcTotal('exp');
+            calcTotal('inc');
+
+            // 2. Calc the budget (income - expenses)
+            //Use Global Data Structure
+            data.budget = data.totals.inc - data.totals.exp;
+
+            // 3. Clac percentage of income spent only if greater than zero
+            // Rounds to closest integer
+            // Verify Parens
+            if (data.totals.inc > 0) {
+                data.percentage = Math.round((data.totals.exp / data.totals.inc) * 100);
+                // Expense = 100 and income 200, spent 50% of the income 100/200 = 0.5 * 100
+                
+                //Test percentage //REMOVE @ Deployment
+                console.log(data.percentage);
+
+            } else { //will not calculate percentage
+                data.percentage = -1;
+            }
+        },
+
+        getBudget: function() {
+            return { // return object with four values
+                budget: data.budget, //calculation is stored here
+                totalInc: data.totals.inc, //total income
+                totalExp: data.totals.exp,//total expenses
+                percentage: data.percentage//percentage of the income(budget)
+            };
+        },
+
         testing: function(){ //Method for testing data structure
             console.log(data);
         }
@@ -208,12 +256,18 @@ let controller = (function(budgetCtrl, UICtrl){
 
         });
     };
-
+    //Private Function
     let updateBudget = function() {
         // 1. Calculate the budget
+        budgetCtrl.calculateBudget();
+
         // 2. Return the budget
+        let budget = budgetCtrl.getBudget();
+
         // 3. Display the budget in the UI 
+        console.log(budget); //***REMOVE @ deployment***
     };
+
     //Private Function
     //Control Center of the Application.
     let ctrlAddItem = function() {
@@ -245,7 +299,7 @@ let controller = (function(budgetCtrl, UICtrl){
             updateBudget();
         }
     };
-    
+
     return{
         init: function(){ //Public initialization function to start the program.
             console.log('Application has started');
