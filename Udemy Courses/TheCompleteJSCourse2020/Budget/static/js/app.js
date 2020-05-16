@@ -148,6 +148,10 @@ let UIController = (function(){
         inputBtn: '.add__btn',
         incomeContainer: '.income__list',
         expensesContainer: '.expenses__list',
+        budgetLabel: '.budget__value',
+        incomeLabel: '.budget__income--value',
+        expensesLabel: '.budget__expenses--value',
+        percentageLabel: '.budget__expenses--percentage',
         
     }
 
@@ -223,6 +227,20 @@ let UIController = (function(){
             fieldsArr[0].focus();
         },  
 
+        // Displays budget data to UI through DOM manipulation
+        displayBudget: function(obj){ //contains the data which needs displayed in the UI
+            document.querySelector(DOMStrings.budgetLabel).textContent = obj.budget;
+            document.querySelector(DOMStrings.incomeLabel).textContent = obj.totalInc;
+            document.querySelector(DOMStrings.expensesLabel).textContent = obj.totalExp;
+            document.querySelector(DOMStrings.percentageLabel).textContent = obj.percentage;
+
+            if (obj.percentage > 0) {//show percentage sign when expenses percentage is greater than zero
+                document.querySelector(DOMStrings.percentageLabel).textContent = obj.percentage + '%';      
+            }else{ //show dashes if >= 0
+                document.querySelector(DOMStrings.percentageLabel).textContent = obj.percentage =  '---';
+            }
+        },
+
         //Make DOMStrings Public
         getDomStrings: function(){
             return DOMStrings;
@@ -263,9 +281,10 @@ let controller = (function(budgetCtrl, UICtrl){
 
         // 2. Return the budget
         let budget = budgetCtrl.getBudget();
+        console.log(budget); //***REMOVE @ deployment***
 
         // 3. Display the budget in the UI 
-        console.log(budget); //***REMOVE @ deployment***
+        UICtrl.displayBudget(budget);
     };
 
     //Private Function
@@ -303,6 +322,13 @@ let controller = (function(budgetCtrl, UICtrl){
     return{
         init: function(){ //Public initialization function to start the program.
             console.log('Application has started');
+            //Clear the staic values in budget
+            UICtrl.displayBudget({ // return object with three values set to zero
+                budget: 0, 
+                totalInc: 0,
+                totalExp: 0,
+                percentage: -1, //set to -1
+            });
             setupEventListeners();
         }
     }
