@@ -315,6 +315,8 @@ let controller = (function(budgetCtrl, UICtrl){
         // Creates an eventListener on the container using event delegation
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
     };
+    
+
     //Private Function
     let updateBudget = function() {
         // 1. Calculate the budget
@@ -385,8 +387,10 @@ let controller = (function(budgetCtrl, UICtrl){
             budgetCtrl.deleteItem(type, ID);
 
             // 2. Delete the item from the UI
+            UICtrl.deleteListItem(itemID);
 
             // 3. Update and show the new budget totals
+            updateBudget();
 
         }
 
