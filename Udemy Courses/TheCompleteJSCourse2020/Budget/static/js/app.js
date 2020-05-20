@@ -229,6 +229,41 @@ let UIController = (function(){
         
     }
 
+    
+    let formatNumber = function(num, type) {
+        /*
+        + or - before number based on exp or inc
+        exactly two decimal places
+        comma separator thousands
+        2310.4567 -> +2310.47
+        1234.76 -> -1234.76
+        2000 -> +2000.00 
+         */
+
+        let numSplit, int, dec;
+        //calculate the absolute 
+        num = Math.abs(num); //overrides num arguement
+
+        //converts the primitive number to an object and makes num fixed with two decimals
+        // and rounds the number. Returns a string.
+        num = num.toFixed(2); 
+                     
+        numSplit = num.split('.'); //divides the string at the decimal point
+
+        int = numSplit[0]; //Array stores integer portion of the number
+
+        if(int.length > 3){
+            //substr first param is where to start second param is how many to read
+            int = int.substr(0, int.length - 3) + ','+ int.substr(int.length - 3, 3); //input 2310, output 2,310
+        }
+
+
+        dec = numSplit[1]; //Array stores the decimal portion of the number
+         
+        //Add sign and decimal to the number (num)
+        return (type === 'exp' ? '-' : '+') + '' + int + '.' + dec;
+    };
+
     //Create an object with three properties
     //Private Function
     return {
@@ -271,7 +306,7 @@ let UIController = (function(){
             //2. Replace placeholder text with some actual data
             newHtml = html.replace('%id%', obj.id);
             newHtml = newHtml.replace('%description%', obj.description);
-            newHtml = newHtml.replace('%value%', obj.value);
+            newHtml = newHtml.replace('%value%', formatNumber(obj.value, type)); //calls formatNumberfunction
 
             //3. Insert the HTML into the DOM
             //Inserted as a child in the specified container as the last item in the list.
@@ -312,9 +347,16 @@ let UIController = (function(){
 
         // Displays budget data to UI through DOM manipulation
         displayBudget: function(obj){ //contains the data which needs displayed in the UI
-            document.querySelector(DOMStrings.budgetLabel).textContent = obj.budget;
-            document.querySelector(DOMStrings.incomeLabel).textContent = obj.totalInc;
-            document.querySelector(DOMStrings.expensesLabel).textContent = obj.totalExp;
+            
+            let type;
+
+            //ternary statement instead of if-else to determine if number is income or expense
+            obj.budget > 0 ? type = 'inc' : type = 'exp';
+
+
+            document.querySelector(DOMStrings.budgetLabel).textContent = formatNumber(obj.budget, type);
+            document.querySelector(DOMStrings.incomeLabel).textContent = formatNumber(obj.totalInc, 'inc');
+            document.querySelector(DOMStrings.expensesLabel).textContent = formatNumber(obj.totalExp, 'exp');
             document.querySelector(DOMStrings.percentageLabel).textContent = obj.percentage;
 
             if (obj.percentage > 0) {//show percentage sign when expenses percentage is greater than zero
