@@ -12,6 +12,21 @@ let budgetController = (function(){
         this.id = id;
         this.description = description;
         this.value = value;
+        this.percentage = -1; //not defined yet
+    };
+
+    //Uses expense prototype to calculate percentage of expense
+    Expense.prototype.calcPercentage = function(totalIncome){
+        if(totalIncome > 0){
+            this.percentage = Math.round((this.value / totalIncome) * 100);
+        }else{
+            this.percentage = -1;
+        }
+    };
+    
+    //returns the percentage of the expense
+    Expense.prototype.getPercentage = function(){
+        return this.percentage;
     };
 
     let Income = function(id, description, value) {
@@ -148,6 +163,34 @@ let budgetController = (function(){
             }
         },
 
+        //Calculate each percentage for expense array
+        calculatePercentage: function() {
+            /*
+            Expenses
+            a = 20
+            b = 10
+            c= 40
+            income = 100
+            aP = 20/100 -> 20%
+            bP = 10/100 -> 10%
+            cP = 40/100 -> 40%
+
+            */
+           //Loops over array and calculates the percentage uing calcPercentage()
+           data.allItems.exp.forEach(function(cur){
+               cur.calcPercentage(data.totals.inc);
+           });
+        },
+
+        // Creates and returns array of all percentages
+        getPercentages: function(){
+            let allPerc = data.allItems.exp.map(function(cur){
+                return cur.getPercentage(); //returns percentages  
+            });
+            return allPerc; //returns the array of all percentages
+
+        },
+
         getBudget: function() {
             return { // return object with four values
                 budget: data.budget, //calculation is stored here
@@ -181,7 +224,8 @@ let UIController = (function(){
         incomeLabel: '.budget__income--value',
         expensesLabel: '.budget__expenses--value',
         percentageLabel: '.budget__expenses--percentage',
-        container: '.container'
+        container: '.container',
+        expensesPercLabel: '.item__percentage',
         
     }
 
@@ -280,6 +324,30 @@ let UIController = (function(){
             }
         },
 
+        displayPercentages: function(percentages){
+            //Returns a nodeList
+            let fields = document.querySelectorAll(DOMStrings.expensesPercLabel); 
+
+            //
+            let nodeListForEach = function(list, callback) {
+                for(let i =0; i < list.length; i++){
+                    //calls the nodeList and its index to be used in the method call below.
+                    callback(list[i], i); 
+
+                }
+            };
+
+            // Loop over nodes and display percentages
+            nodeListForEach(fields, function(current, index){ //node and callback function as params
+                
+                if(percentages[index] > 0){
+                    current.textContent = percentages[index] + '%'; // adds percentage 
+                }else{
+                    current.textContent = '---';
+                }
+            });
+        },
+
         //Make DOMStrings Public
         getDomStrings: function(){
             return DOMStrings;
@@ -319,10 +387,14 @@ let controller = (function(budgetCtrl, UICtrl){
     let updatePercentages = function(){
 
         // 1. Calc percentages
-
+        budgetCtrl.calculatePercentage();
+        
         // 2. Read percentages from budget Controller
+        let percentages = budgetController.getPercentages();
 
         // 3. Update the UI with new percentages
+        UICtrl.displayPercentages(percentages);
+        console.log(percentages);
 
     };
 
