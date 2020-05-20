@@ -315,7 +315,16 @@ let controller = (function(budgetCtrl, UICtrl){
         // Creates an eventListener on the container using event delegation
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
     };
-    
+
+    let updatePercentages = function(){
+
+        // 1. Calc percentages
+
+        // 2. Read percentages from budget Controller
+
+        // 3. Update the UI with new percentages
+
+    };
 
     //Private Function
     let updateBudget = function() {
@@ -359,6 +368,9 @@ let controller = (function(budgetCtrl, UICtrl){
 
             // 5. Calculate and update budget method call
             updateBudget();
+
+            // 6. Calculate and update percentages
+            updatePercentages();
         }
     };
 
@@ -391,6 +403,9 @@ let controller = (function(budgetCtrl, UICtrl){
 
             // 3. Update and show the new budget totals
             updateBudget();
+
+            // 4. Calculate and update percentages
+            updatePercentages();
 
         }
 
