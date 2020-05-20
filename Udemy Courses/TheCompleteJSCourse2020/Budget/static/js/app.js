@@ -226,6 +226,7 @@ let UIController = (function(){
         percentageLabel: '.budget__expenses--percentage',
         container: '.container',
         expensesPercLabel: '.item__percentage',
+        dateLabel: '.budget__title--month',
         
     }
 
@@ -390,6 +391,26 @@ let UIController = (function(){
             });
         },
 
+        //save current date into a new variable
+        displayMonth: function() {
+
+            let dateNow, month, monthName, year;
+
+            dateNow = new Date(); //returns todays date
+
+            //Create an array with month names
+            monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+                        'August', 'September', 'October', 'November', 'December'];
+            month = dateNow.getMonth(); //returns current month
+
+            //inherits date methods from date prototype
+            year = dateNow.getFullYear(); //returns year
+
+            //Since the array is zero based, the index corresponds to the month
+            document.querySelector(DOMStrings.dateLabel).textContent = monthName[month] + ' ' + year;
+
+        },
+
         //Make DOMStrings Public
         getDomStrings: function(){
             return DOMStrings;
@@ -532,6 +553,10 @@ let controller = (function(budgetCtrl, UICtrl){
     return{
         init: function(){ //Public initialization function to start the program.
             console.log('Application has started');
+
+            //Display Month
+            UICtrl.displayMonth();
+
             //Clear the staic values in budget
             UICtrl.displayBudget({ // return object with three values set to zero
                 budget: 0, 
