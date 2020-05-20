@@ -94,6 +94,35 @@ let budgetController = (function(){
             //Return the new item/element
             return newItem;
         },
+
+        // This function creates an array of all current element ids and determines
+        // the index of each element id.
+        // data.allItems[type][id]; does not work because not all elements are
+        // present Example: ids = [2, 4, 6, 8] - 3,5,7 are missing and will not correspond to 
+        // index in a 1 to 1 fashion -> [0]!=0, [3]!=3, [5]!=5 and so on.
+        // in this case when deleting [3]===8
+        deleteItem: function(type, id) {
+            let ids, index;
+            
+            //Creates an array of all ids
+            ids = data.allItems[type].map(function(current){
+                return current.id;
+
+            });
+
+            //determines index number of the id which is passed into the method
+            index = ids.indexOf(id);
+
+            //If the index exists remove the index
+            if(index !== -1){
+                //Use splice to remove elements of array
+                //Arguments in splice method (where to start, how many to remove)
+                //Removes the element at the index number and only remove one element
+                data.allItems[type].splice(index, 1);
+            }
+
+        },
+
         calculateBudget: function() {
 
             // 1, Calculate total Income and total expenses
@@ -152,6 +181,7 @@ let UIController = (function(){
         incomeLabel: '.budget__income--value',
         expensesLabel: '.budget__expenses--value',
         percentageLabel: '.budget__expenses--percentage',
+        container: '.container'
         
     }
 
@@ -175,7 +205,7 @@ let UIController = (function(){
 
                 element = DOMStrings.incomeContainer;
                 
-                html = '<div class="item clearfix" id="income-%id%">' + 
+                html = '<div class="item clearfix" id="inc-%id%">' + 
                 '<div class="item__description">%description%</div>' +
                 '<div class="right clearfix"><div class="item__value">%value%</div>' +
                 '<div class="item__delete"><button class="item__delete--btn">' + 
@@ -185,7 +215,7 @@ let UIController = (function(){
 
                 element = DOMStrings.expensesContainer;
 
-                html = '<div class="item clearfix" id="expense-%id%">' + 
+                html = '<div class="item clearfix" id="exp-%id%">' + 
                 '<div class="item__description">%description%</div>' +
                 '<div class="right clearfix"><div class="item__value">%value%</div>' + 
                 '<div class="item__percentage">21%</div><div class="item__delete">' +
@@ -202,6 +232,15 @@ let UIController = (function(){
             //3. Insert the HTML into the DOM
             //Inserted as a child in the specified container as the last item in the list.
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
+        },
+
+        //Removes child element
+        deleteListItem: function(selectorID){
+            //Save id to a variable
+            let el = document.getElementById(selectorID);
+            //Remove the child of the element
+            el.parentNode.removeChild(el);
+
         },
 
         //Clear fields after enter of input
@@ -271,8 +310,10 @@ let controller = (function(budgetCtrl, UICtrl){
                 
                 ctrlAddItem(); //locks in data to be selected//see function above
             }
-
         });
+        
+        // Creates an eventListener on the container using event delegation
+        document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
     };
     //Private Function
     let updateBudget = function() {
@@ -317,6 +358,42 @@ let controller = (function(budgetCtrl, UICtrl){
             // 5. Calculate and update budget method call
             updateBudget();
         }
+    };
+
+    // Accesses event param to traverse the dom
+    let ctrlDeleteItem = function(event){
+        
+        //Declare variable for the delete function
+        let itemID, splitID, type, ID;
+
+        //Returns HTML node in the dom 
+        // To move up from this node all that needs called is (.parentNode)
+        //Using parentNode four times moves the node all the way to 
+        itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
+
+        //
+        if(itemID) {
+
+            //Use split method to break the item away from its id
+            //Split the item ID on the dash See HTML ids
+            //When using a method on a primitive, JS converts the primitive to an object
+            splitID = itemID.split('-');
+            type = splitID[0]; //stores the first part of the split id (exp/inc)
+            ID = parseInt(splitID[1]); //holds the second part of the split id (id number as a string) and the converst string to a number
+
+            // 1. Delete the item from the data structure
+            budgetCtrl.deleteItem(type, ID);
+
+            // 2. Delete the item from the UI
+
+            // 3. Update and show the new budget totals
+
+        }
+
+        //Log for testing
+        console.log(event.target.parentNode.parentNode.parentNode.parentNode.id);
+
+
     };
 
     return{
