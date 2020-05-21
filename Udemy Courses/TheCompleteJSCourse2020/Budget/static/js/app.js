@@ -265,6 +265,14 @@ let UIController = (function(){
         return (type === 'exp' ? '-' : '+') + '' + int + '.' + dec;
     };
 
+    let nodeListForEach = function(list, callback) {
+        for(let i =0; i < list.length; i++){
+            //calls the nodeList and its index to be used in the method call below.
+            callback(list[i], i); 
+
+        }
+    };
+
     //Create an object with three properties
     //Private Function
     return {
@@ -371,15 +379,6 @@ let UIController = (function(){
             //Returns a nodeList
             let fields = document.querySelectorAll(DOMStrings.expensesPercLabel); 
 
-            //
-            let nodeListForEach = function(list, callback) {
-                for(let i =0; i < list.length; i++){
-                    //calls the nodeList and its index to be used in the method call below.
-                    callback(list[i], i); 
-
-                }
-            };
-
             // Loop over nodes and display percentages
             nodeListForEach(fields, function(current, index){ //node and callback function as params
                 
@@ -410,6 +409,23 @@ let UIController = (function(){
             document.querySelector(DOMStrings.dateLabel).textContent = monthName[month] + ' ' + year;
 
         },
+        changedType: function(){
+
+            //Change style  - manipulate CSS class
+            //Creates a nodeList
+            let fields = document.querySelectorAll(
+                DOMStrings.inputType  + ',' +
+                DOMStrings.inputDescription + ',' +
+                DOMStrings.inputValue
+            );
+
+            nodeListForEach(fields, function(cur){
+                cur.classList.toggle('red-focus');//Toggles the color when a type change is made
+
+            });
+
+            document.querySelector(DOMStrings.inputBtn).classList.toggle('red');
+        },
 
         //Make DOMStrings Public
         getDomStrings: function(){
@@ -422,6 +438,7 @@ let UIController = (function(){
 
 
 //This module connects the budgetController and the UI Module
+//Control Center of the Application.
 //APP CONTROLLER - Controller
 let controller = (function(budgetCtrl, UICtrl){
 
@@ -445,6 +462,8 @@ let controller = (function(budgetCtrl, UICtrl){
         
         // Creates an eventListener on the container using event delegation
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
+    
+        document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changedType);
     };
 
     let updatePercentages = function(){
@@ -475,7 +494,6 @@ let controller = (function(budgetCtrl, UICtrl){
     };
 
     //Private Function
-    //Control Center of the Application.
     let ctrlAddItem = function() {
 
         //Declare the variables
@@ -546,8 +564,6 @@ let controller = (function(budgetCtrl, UICtrl){
 
         //Log for testing
         console.log(event.target.parentNode.parentNode.parentNode.parentNode.id);
-
-
     };
 
     return{
