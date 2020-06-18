@@ -4,9 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divs_Spans_Classes & Ids</title>
+
+    <!-- Using style in the html to provide a background -->
+    <style>
+        .card{
+            border:1px solid #ccc;
+            background: #f4f4f4;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+
+        .enhance{
+            color: yellow;
+            background-color: black;
+        }
+    </style>
 </head>
 <body>
-    <h1>Divs_Spans_Classes & Ids</h1>
+    <div id="main-header" class="card">
+        <h1>Divs_Spans_Classes & Ids</h1>
+        <p>A website about divs, classes and ids</p>
+    </div>
+    <ul id="main-nav" >
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contacts</a></li>
+    </ul>
+    <div class="card">
+        <h3>Spans</h3>
+        <p>
+            <ul>
+                <li>A div is a block level element</li>
+                <li>A span is an inline element</li>
+                <li>In the "About" section a span is used to <span class="enhance">highlight</span> a snippet of text</li>
+            </ul>
+        </p>
+    </div>
+    <!-- Shortcut for Emmet is 
+        (div#about TAB creates <div id="about"></div>) -->
+    <div id="about" >
+        <h3>About</h3>
+        <p>Lorem<span class="enhance"> dolor sit amet consectetur</span>, 
+            adipisicing elit. Accusantium, sit?</p>
+    </div>
+    <div id="contact" class="card">  
+        <h3>Contact Me</h3>
+        <ul>
+            <li>Address: 50 Main St, Boston MA</li>
+            <li>Phone: (419) 438-1138</li>
+            <li>Email: me@somethingcool.com</li>
+        </ul>
+    </div>
+    <div id="footer">
+        <p>Copyright &copy; 2020</p> <!-- notice the &copy; this displays the copyright symbol-->
+    </div>
     
 </body>
 </html>
