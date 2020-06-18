@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists and Tables</title>
+</head>
+<body>
+    <h1>Lists and Tables</h1>
+    <hr>
+
+    <!-- Unordered List -->
+    <h3>Unordered List</h3>
+    <!-- You can use a style attribute to change bullet point styles
+    style="list-style: circle/ square/ disk/ none" 
+    But best practice is to use CSS-->
+    <ul style="list-style: circle"> <!-- Unfilled circle-->
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <hr>
+    <!-- Ordered List -->
+    <!-- To make it quicker use li*(num) to determine how many li you want 
+        li*4 will make 4 list items -->
+    <h3>Ordered List</h3>    
+
+    <!-- You can use type attribute to state which type of numbering to use
+    type="A/a, I/i, 1-default" -->
+    <ol type="I">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ol>
+
+    <hr>
+
+    <!-- Nested List -->
+    <h3>Nested Lists - Ordered and UnOrdered</h3>
+    <ul> 
+        <li>Item 1</li>
+        <li>Item 2
+            <ul>
+                <li>Nested Item 1</li>
+                <li>Nested Item 2</li>
+                <li>Nested Item 3</li>
+            </ul>
+        </li>
+        <li>Item 3
+            <ol>
+                <li>Nested Ordered Item 1</li>
+                <li>Nested Ordered Item 2</li>
+            </ol>
+        </li>
+        <li>Item 4</li>
+    </ul>
+
+    <!-- Tables -->
+    <hr>
+    <h3>Tables</h3>
+    
+    <!-- Use CSS to style the table -->
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Brian</td>
+                <td>Bok</td>
+                <td>brian.bokusmc@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Tanya</td>
+                <td>Bok</td>
+                <td>tanyabok@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Elijah</td>
+                <td>Bok</td>
+                <td>elijahbok@gmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

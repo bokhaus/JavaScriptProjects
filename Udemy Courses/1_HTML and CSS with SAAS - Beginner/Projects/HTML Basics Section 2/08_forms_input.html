@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms & Input</title>
+</head>
+<body>
+    <h1>Forms and Input</h1>
+    <form action="process.php">
+        <div>
+            <label for="name">Name</label><br>
+
+            <!-- To preload a value in a box use 'value' -->
+            <input type="text" id="name" >
+        </div>
+        <div>
+            <!-- Use this to add validation on client side-->
+            <!-- will only accept an email -->
+            <label for="email">Email</label><br>
+            <!-- To add a value that goes awy when entering data use 'placeholder' -->
+            <input type="email" name="email" id="email" placeholder="Enter an email">
+        </div>
+        <div>
+            <!-- Message Field -->
+            <label for="message">Message</label><br>
+            <!-- Use cols and rows to set size of the message box -->
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <!-- Dropdown form -->
+            <label for="sex">Sex</label>
+            <select name="sex" id="sex">
+                <!-- To load preselected use 'selected' -->
+                <option value="male" >Male</option>
+                <option value="female" selected>Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div><br>
+        <div>
+            <!-- Number field -->
+            <label for="age">Age</label><br>
+            <input type="number" name="age" id="age">
+        </div><br>
+        <div>
+            <!-- date picker form -->
+            <label for="birthdate">Birthdate</label><br>
+            <input type="date" name="birthdate" id="birthdate">
+        </div><br>
+        <div>
+            <!-- Radio Buttons -->
+            <label for="membership">Membership</label><br>
+            <!-- To add a label just add it at the end -->
+            <input type="radio" name="membership" value="simple" id="membership">Simple
+            <input type="radio" name="membership" value="standard" id="membership">Standard
+            <input type="radio" name="membership" value="super" id="membership">Super
+            <!-- To load with a pre-checked button use attribute 'checked' -->
+            <input type="radio" name="membership" value="super" id="membership" checked>SuperDupper
+
+        </div><br>
+
+        <div>
+            <!-- To select multiples use CNTL D for each item (Multiple Cursors) -->
+            <!-- Checkbox -->
+            <label for="membership">Hobbies</label><br>
+            <!-- To add a label just add it at the end -->
+            <input type="checkbox" name="hobbies" value="biking" id="hobbies">Biking
+            <input type="checkbox" name="hobbies" value="running" id="hobbies">Running
+            <input type="checkbox" name="hobbies" value="sleeping" id="hobbies">Sleeping
+            <!-- To load with a pre-checked button use attribute 'checked' -->
+            <input type="checkbox" name="hobbies" value="travel" id="hobbies">Travel
+        
+        </div>
+        <!-- Shift TAB moves the entire block left -->
+        <div>
+            <br>
+            <!-- Two ways to create a submit button -->
+            <!-- Example One (INPUT)-->
+            <input type="submit" value="Submit">
+
+            <!-- Example Two (Button Tag-->
+            <br><br>
+            <button type="submit">Submit</button>
+
+            <div>
+                <!-- Reset Button -->
+                <button type="reset">Reset</button>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>
