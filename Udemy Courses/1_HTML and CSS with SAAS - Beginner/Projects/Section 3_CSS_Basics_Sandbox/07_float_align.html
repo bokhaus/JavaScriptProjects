@@ -25,6 +25,10 @@
       margin-bottom: 15px;
     }
 
+  .clr {
+    clear: both;
+  }
+
   .box p {
     /* Text align */
     text-align: left;
@@ -47,24 +51,33 @@
   }
 
   .notes {
-    background-color: teal;
-    margin: 10px;
-    padding: 0px 20px 2px 5px;
-    border: 2px solid black;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
   }
 
   .list-item {
     background-color: blanchedalmond;
-    margin: auto;
-    padding: auto;
     border: 2px solid black;
+    margin-right: 20px;
+    padding-left: 20px;
 
   }
 
   .text-header {
     text-align: center;
   }
-  
+
+  #notes-ol {
+    background-color:rgb(95, 99, 110);
+    padding: 20px;
+  }
+
+  .ol-testing {
+    background-color: crimson;
+    padding-top: 20px;
+    
+  }
   </style>
 </head>
 <body>
@@ -73,9 +86,10 @@
       <h1>Float and Alignment</h1>
     </div>
   
-    <div class="notes"><h3><u>Notes:</u></h3>
-      <ol>
-        <li class="list-item"><b>Center and set width using container element</b>
+    <div class="notes"><h3><u>Notes:</u></h3></div>
+    <div id="notes-ol">
+      <ol class="ol-testing">
+        <li id="test-notes-list" class="list-item"><b>Center and set width using container element</b>
           <br>
           <ul>
             <br>
@@ -121,18 +135,20 @@
             }</code></li>
             <li>EXAMPLE &nbsp;<code>* {
               box-sizing: border-box;
-            }</code></li>
+            }</code> Removes padding - so it will need added back after spacing is correct.</li>
             <li>The two need used together to maintain proper distancing.</li>
           </ul>
         </li>
   
         <br>
   
-        <li class="list-item"><b>Note Four</b>
+        <li class="list-item"><b>Clear Float</b>
           <br>
           <ul>
-            <li></li>
-            <li></li>
+            <li>Remove the float to allow another box to be on the same level. A 
+              clear attribute must be assigned in the CSS.</li>
+            <li><code>class="clr"</code> used inside of a div following the use of the float.</li>
+              <li>CSS function - &nbsp;<code>.clr {clear: both;}</code></li>
           </ul>
         </li>
   
@@ -140,26 +156,38 @@
   
       </ol>
     </div>
-  </div>
+      
+    </div>
+
   
 
   <div class="container">
     <div id="box-1" class="box">
-      <h3>Heading</h3>
+      <h3>Heading One</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, 
         dolor quod? Culpa delectus laudantium alias placeat pariatur odio 
         aperiam optio?</p>
     </div>
 
     <div id="box-2" class="box">
-      <h3>Heading</h3>
+      <h3>Heading Two</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, 
         dolor quod? Culpa delectus laudantium alias placeat pariatur odio 
         aperiam optio?</p>
     </div>
 
     <div id="box-3" class="box">
-      <h3>Heading</h3>
+      <h3>Heading Three</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, 
+        dolor quod? Culpa delectus laudantium alias placeat pariatur odio 
+        aperiam optio?</p>
+    </div>
+
+    <!-- Clear the float and moves box-4 down -->
+    <div class="clr"></div>
+
+    <div id="box-4" class="box">
+      <h3>Heading Four</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, 
         dolor quod? Culpa delectus laudantium alias placeat pariatur odio 
         aperiam optio?</p>

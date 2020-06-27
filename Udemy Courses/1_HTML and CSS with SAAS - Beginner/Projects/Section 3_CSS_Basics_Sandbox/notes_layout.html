@@ -4,62 +4,136 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Links & Buttons</title>
+  <title>Notes layout</title>
   <style>
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: grey;
+    }
+
+    #container-1 {
+      background: rgb(117, 11, 32);
+      border: 1px solid #333333;
+      padding: 10px;
+      margin: 30px auto;
+      max-width: 960px;
+    }
+
+    #notes-header {
+      background-color: black;
+      color: #ceb7b7;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    #ol {
+      background-color: black;
+      color: #ceb7b7;
+      border: 2px solid black;
+      margin: 5px;
+    }
+
+    a {
+      color: #ceb7b7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: crimson;
+      text-decoration: underline;
+    }
+
+    .footer {
+      background: rgb(117, 11, 32);
+      padding: 2px;
+    }
+
+    .footer-contact {
+      background-color: black;
+      color: #ceb7b7;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 1px;
+      margin: 7px;
+    }
+
+    .footer-contact a {
+      color: cyan;
+    }
     
+    h1 {
+      text-align: center;
+    }
+
+    /* Button Styling */
+    .btn {
+      background: #4c6ca0; /*facebook blue*/
+      color: #ffffff; /* font color white */
+      border: none;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
   </style>
 </head>
 <body>
-  <div>
-    <h1>Box Model / Margin & Padding</h1>
+  <div id="top-main-notes">
+    <div id="header-1">
+      <h1>Notes Template</h1>
+    </div>
+  
+    <!-- Notes Section -->
+    <div id="container-1" class="container">
+      <div id="notes-header"><b>Notes:</b></div>
+      <div id="list-box">
+        <div id="ol">
+          <ol>
+            <li>Note One
+              <ul>
+               <li></li>
+              </ul>
+            </li>
+            <br>
+            <li>Note Two
+              <ul>
+               <li></li>
+              </ul>
+            </li>
+            <br>
+            <li>Note Three
+              <ul>
+               <li></li>
+              </ul>
+            </li>
+            <br>
+            <li>Note Four
+              <ul>
+                <li></li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Code Section -->
+  <div id="container-2" >
+    <h1>Demo</h1>
+    <!--Demo Section  -->
+
+    <br><br>
   </div>
 
-  <div><h3><u>Notes:</u></h3>
-    <ol>
-      <li><b>Note One</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Two</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Three</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Four</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-    </ol>
+  <div class="footer">
+    <footer class="footer-contact">
+      <p>Author: Brian Bok&nbsp;&nbsp; <a href="mailto:brian.bokusmc@gmail.com">brian.bokusmc@gmail.com</a></p>
+    </footer>
   </div>
   
-  <hr>
-
+    
 </body>
 </html>

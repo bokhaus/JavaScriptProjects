@@ -4,62 +4,177 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Links & Buttons</title>
+  <title>Links and Buttons</title>
   <style>
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: grey;
+    }
+
+    #container-1 {
+      background: rgb(117, 11, 32);
+      border: 1px solid #333333;
+      padding: 10px;
+      margin: 30px auto;
+      max-width: 960px;
+    }
+
+    #notes-header {
+      background-color: black;
+      color: #ceb7b7;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    #ol {
+      background-color: black;
+      color: #ceb7b7;
+      border: 2px solid black;
+      margin: 5px;
+    }
+
+    a {
+      color: #ceb7b7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: crimson;
+      
+    }
+
+    .footer {
+      background: rgb(117, 11, 32);
+      padding: 2px;
+    }
+
+    .footer-contact {
+      background-color: black;
+      color: #ceb7b7;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 1px;
+      margin: 7px;
+    }
+
+    .footer-contact a {
+      color: cyan;
+    }
+
+    .footer-contact a:hover {
+      color: cyan;
+      text-decoration: underline;
+    }
+        
     
+    h1 {
+      text-align: center;
+    }
+
+    /* Button Styling */
+    .btn {
+      background: #4c6ca0; /*facebook blue*/
+      color: #ffffff; /* font color white */
+      border: none;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      color: #f4f4f4;
+      background: #446190;
+    }
+
   </style>
 </head>
 <body>
-  <div>
-    <h1>Box Model / Margin & Padding</h1>
+  <div id="top-main-notes">
+    <div id="header-1">
+      <h1>Box Model / Margin & Padding</h1>
+    </div>
+  
+    <!-- Notes Section -->
+    <div id="container-1" class="container">
+      <div id="notes-header"><b>Notes:</b></div>
+      <div id="list-box">
+        <div id="ol">
+          <ol>
+            <li>Basic create a link
+              <ul>
+                <li>Example: &nbsp;<code>&lt;a href="#"&gt;Click here&lt;/a&gt;</code></li>
+                <li>In this case, # represents a web address and will return the current page.</li>
+                <li>***The link is blue by default and underlined</li>
+                <br>
+                <li>To change color and underline use CSS attributes</li>
+                <img src="./static/images/link decoration.JPG" alt="link decoration">
+                <br><br>
+                <li>To change the hover color, use the psuedo selector</li>
+                <img src="./static/images/PsuedoHover.JPG" alt="Psuedo Hover">
+                <br><br>
+                <li>You may also increase size, weight or set other attributes on hover </li>
+                <img src="./static/images/IncreaseSizeAndWeight.JPG" alt="other attributes">
+                <br><br>
+                <li>In addition to hover there is also 'visited" which changes the link once it 
+                  has been visited. Also a:active which changes the color of the link while 
+                  being clicked. Neither are used frequently.</li>
+                <img src="./static/images/Visited.JPG" alt="visited">
+                <br><br>
+              </ul>
+            </li>
+            <br>
+            <li>Basic Button
+              <ul>
+                <li>Example: &nbsp;<code>&lt;button class='btn'&gt;My Button&lt;/button&gt;</code></li>
+                <li>Usually uses a class such as; &nbsp;&nbsp;<code>class='btn'</code></li>
+                <br>
+                <li>Add styling to the btn class - global styling</li>
+                <br>
+                <li><code><b>cursor: pointer;</b></code>&nbsp; displays a pointer when hovering over a link or button</li>
+                <img src="./static/images/ButtonStyling.JPG" alt="button styling">
+              </ul>
+            </li>
+            <br>
+            <li>Hover on button or link. Set attributes in CSS. 
+              <ul>
+               <li>use&nbsp;<code>.btn:hover {color: #f4f4f4; background: #446190;}</code></li>
+               <li></li>
+              </ul>
+            </li>
+            <br>
+            <li>The final version formats a link to look like a button
+              <br><br>
+              <!-- Format Link and Button the same -->
+              Basic Link:&nbsp;&nbsp;<a class="btn" href="#">My Link</a>
+              <br><br>
+              Basic Button:&nbsp;&nbsp;<button class='btn'>My Button</button>
+              
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Code Section -->
+  <div id="container-2" >
+    <h1>Demo</h1>
+    <!-- Format Link and Button the same -->
+    Basic Link:&nbsp;&nbsp;<a class="btn" href="#">My Link</a>
+    <br><br>
+    Basic Button:&nbsp;&nbsp;<button class='btn'>My Button</button>
+    <br><br>
   </div>
 
-  <div><h3><u>Notes:</u></h3>
-    <ol>
-      <li><b>Note One</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Two</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Three</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Four</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-    </ol>
+  <div class="footer">
+    <footer class="footer-contact">
+      <p>Author: Brian Bok&nbsp;&nbsp; <a href="mailto:brian.bokusmc@gmail.com">brian.bokusmc@gmail.com</a></p>
+    </footer>
   </div>
   
-  <hr>
-
+  
 </body>
 </html>

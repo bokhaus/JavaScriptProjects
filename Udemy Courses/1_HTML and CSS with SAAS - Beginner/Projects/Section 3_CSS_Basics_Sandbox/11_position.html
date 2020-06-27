@@ -6,60 +6,68 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CSS Positioning</title>
   <style>
-   
+    #container-1 {
+      background: #f4f4f4;
+      border: 1px solid #333333;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+
+    .container{
+      max-width: 960px;
+      margin: 30px auto;
+    }
+
+    #notes-header {
+      background-color: lightslategray;
+      padding: 10px;
+    }
+
+    #header-1 {
+      text-align: center;
+    }
+
   </style>
 </head>
 <body>
-  <div>
+  <div id="header-1">
     <h1>Box Model / Margin & Padding</h1>
   </div>
 
-  <div><h3><u>Notes:</u></h3>
-    <ol>
-      <li><b>Note One</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Two</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Three</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Four</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-    </ol>
+  <!-- Notes Section -->
+  <div id="container-1" class="container">
+    <div id="notes-header"> Notes:</div>
+    <div id="list-box">
+      <div id="ol">
+        <ol>
+          <li>Note One
+            <ul>
+              <li></li>
+            </ul>
+          </li>
+          <li>Note Two
+            <ul>
+              <li></li>
+            </ul>
+          </li>
+          <li>Note Three
+            <ul>
+              <li></li>
+            </ul>
+          </li>
+          <li>Note Four
+            <ul>
+              <li></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
   </div>
-  
   <hr>
+
+  <!-- Code Section -->
+  <div id="container-2" class="container"></div>
 
 </body>
 </html>

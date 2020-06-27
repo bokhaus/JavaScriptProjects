@@ -6,60 +6,156 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Inline & Block Styling</title>
   <style>
-   
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: grey;
+    }
+    /* Notes and Footer CSS */
+    #container-1 {
+      background: rgb(117, 11, 32);
+      border: 1px solid #333333;
+      padding: 10px;
+      margin: 30px auto;
+      max-width: 960px;
+    }
+
+    #container-2 {
+      border: 2px solid;
+      margin: 30px auto;
+      background: #c7a0a0;
+    }
+
+    #notes-header {
+      background-color: black;
+      color: #ceb7b7;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    #ol {
+      background-color: black;
+      color: #ceb7b7;
+      border: 2px solid black;
+      margin: 5px;
+    }
+
+    .footer {
+      background: rgb(117, 11, 32);
+      padding: 2px;
+    }
+
+    .footer-contact {
+      background-color: black;
+      color: #ceb7b7;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 1px;
+      margin: 7px;
+    }
+
+    .footer-contact a {
+      color: cyan;
+    }
+    
+    h1, h3{
+      text-align: center;
+    }
+
+    a {
+      color: #ceb7b7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color:  rgb(117, 11, 32);
+      
+    }
+    
   </style>
 </head>
 <body>
-  <div>
-    <h1>Box Model / Margin & Padding</h1>
+  <div id="top-main-notes">
+    <div id="header-1">
+      <h1>Inline & Block Styling</h1>
+    </div>
+  
+    <!-- Notes Section -->
+    <div id="container-1" class="container">
+      <div id="notes-header"><b>Notes:</b></div>
+      <div id="list-box">
+        <div id="ol">
+          <ol>
+            <h3>Header One</h3>
+            <li>
+              <br><br>
+              <img src="" alt="">
+            </li>
+            <br>
+            <br>
+            <li>
+              <br><br>
+              <img src="" alt="">
+            </li>
+            <br>
+            <br>
+            <li>
+              <br><br>
+              <img src="" alt="">
+            </li>
+            <br>
+            <br>
+            <li>
+              <br><br>
+              <img src="" alt="">
+            </li>
+            <br>
+            <br>
+            <h3>Header Two</h3>
+            <li>
+              <br><br>
+              <img src="" alt="">
+            </li>
+            <br>
+            <br>
+            <li>
+              <br><br>
+              <img src="" alt="">
+            </li>
+            <br>
+            <br>
+            <li>
+              <br><br>
+              <img src="" alt="">
+            </li>
+            <br>
+            <br>
+            <li>
+              <br><br>
+              <img src="" alt="">
+            </li>
+            <br>
+            <br>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Code Demo Section -->
+  <div id="container-2" >
+    <h1>Demo</h1>
+
+    <br><br>
   </div>
 
-  <div><h3><u>Notes:</u></h3>
-    <ol>
-      <li><b>Note One</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Two</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Three</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-      <li><b>Note Four</b>
-        <br>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
-
-      <br>
-
-    </ol>
+  <div class="footer">
+    <footer class="footer-contact">
+      <p>Author: Brian Bok&nbsp;&nbsp; <a href="mailto:brian.bokusmc@gmail.com">brian.bokusmc@gmail.com</a></p>
+    </footer>
   </div>
   
-  <hr>
-
+    
 </body>
 </html>
