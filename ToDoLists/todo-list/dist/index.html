@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JustTodo</title>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:900|Roboto:300,400,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="outter-container">
+        <header>
+            <h1 id="logo">JustTodo<span>&#10004;</span></h1>
+        </header>
+
+        <section class="organizer-container">
+            <aside class="project-menu organizer-component">
+                <h3>Projects</h3>
+                <ul class="project-list">
+
+                </ul>
+                <div class="create-project-field">
+                    <span class="create-btn create-project-btn clickable">+</span>
+                    <input type="text" class="name-input project-name-input input-gray" placeholder="New Project">
+                </div> 
+            </aside>
+
+            <main class="current-project organizer-component">
+                <div class="create-todo-field">
+
+                </div>
+                <ul class="project-todo-list">
+                    
+                </ul>
+            </main>
+
+            <div class="todo-modal">
+                <section class="todo-details organizer-component">
+                    
+                </section>
+            </div>
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
