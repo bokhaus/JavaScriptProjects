@@ -6,10 +6,172 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Backgrounds & Borders</title>
   <style>
+    #box-1 {
+      background-color: blanchedalmond;
+      /* border-width: 3px;
+      border-color: red;
+      border-style: solid; */
+
+      /* Or combine border attributes in one */
+
+      border: 5px dotted red;
+      border-radius: 10px; /* rounded corners on entire border*/
+    }
+
+    #box-2 {
+      background: #333;
+      color: #fff;
+      border-top: blue solid 3px;
+      border-top-left-radius: 10px; /* rounded corners on upper left corner of the border*/
+      border-top-right-radius: 10px; /* rounded corners on upper right corner of the border*/
+    }
+
+    #box-3 {
+      /* to use an image */
+      /* background-image: url('./static/images/stars.jpg'); 
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover; */
+
+      /* background may be done in one line as well */
+      background: url('./static/images/stars.jpg') no-repeat center center/cover;
+
+      color: #fff;
+      height: 300px;
+      width: 600px;
+    }
+
+    #box-4 {
+      /* using png and making it fixed position in the div*/
+      background: url('./static/images/leaf.png') no-repeat center center;
+      background-attachment: fixed;
+    }
   
   </style>
 </head>
 <body>
- 
+  <div>
+    <h1>Backgrounds and Borders</h1>
+  </div>
+  <div>
+    <ol>
+      <h3><u>Notes:</u></h3>
+
+        <li><b>border:</b>  This can be done in one or multiple lines
+          <ul>
+            <br>
+            <li>
+              border: 3px solid red;
+            </li>
+
+            <br>
+            <b>Same As...</b><br>
+            <br>
+            <li>
+              border-width: 3px;
+              <br>border-color: red;
+              <br>border-style: solid; 
+            </li>
+          </ul>
+        </li>
+
+        <br>
+
+        <li><b>background-position</b> Can be center center or use PX or other form. 
+          Just be aware there are multiple ways to adjust the image inside of 
+          the container.
+          <ul>
+            <br> 
+            <li>background-position: center top;</li>
+            <li>background-position:  -100px -100px;</li>
+          </ul>
+        </li>
+        
+        <br>
+
+        <li><b>Background may be done in one line as well</b>
+          <ul>
+            <br>
+            <li>background: url('./static/images/stars.jpg') no-repeat center center/cover;</li>
+            <br><b>Same As...</b><br>
+            <br>
+            <li>
+              background-image: url('./static/images/stars.jpg'); 
+              <br>background-repeat: no-repeat;
+              <br>background-position: center top;
+              <br>background-size: cover;</li>
+          </ul>
+        </li>
+        
+        <br>
+        
+        <li><b>Transparent background image (PNG)</b>
+          <ul>
+            <br>
+            <li><b>background: url('./static/images/leaf.png') no-repeat center center;</b> (centers image)</li>
+            <li><b>background-attachment: fixed; </b>(fixes image when scrolling)</li>
+          </ul>
+        </li>
+
+    </ol>
+  </div>
+
+  <hr> <br>
+
+ <div id="box-1">
+   <h3>Box One</h3>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+ </div>
+ <br>
+ <div id="box-2">
+   <h3>Box Two</h3>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+ </div>
+ <div id="box-3">
+   <h3>Box Three</h3>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+ </div>
+ <div id="box-4">
+   <h3>Box Four</h3>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus 
+     unde, asperiores voluptatum modi temporibus vitae doloremque. Neque numquam eaque 
+     maxime sequi, aut saepe adipisci quia sint reiciendis cum voluptate!</p>
+ </div>
 </body>
 </html>

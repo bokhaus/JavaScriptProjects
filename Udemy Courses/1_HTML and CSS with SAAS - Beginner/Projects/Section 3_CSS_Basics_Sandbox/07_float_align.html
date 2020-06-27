@@ -6,10 +6,164 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Float & Align</title>
   <style>
-    
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.4em;
+    }
+    .container{
+      max-width: 960px;
+      margin: 30px auto;
+    }
+
+    .box {
+      background: #f4f4f4;
+      border: 1px solid #333333;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+
+  .box p {
+    /* Text align */
+    text-align: left;
+    text-align: right;
+    text-align: center;
+  }
+  #box-2 {
+    float: left;
+    width: 68%;
+  }
+
+  #box-3 {
+    float: right;
+    width: 30%;
+  }
+
+  #notes-box {
+    padding: 10px;
+    background-color:blanchedalmond;
+  }
+
+  .notes {
+    background-color: teal;
+    margin: 10px;
+    padding: 0px 20px 2px 5px;
+    border: 2px solid black;
+  }
+
+  .list-item {
+    background-color: blanchedalmond;
+    margin: auto;
+    padding: auto;
+    border: 2px solid black;
+
+  }
+
+  .text-header {
+    text-align: center;
+  }
+  
   </style>
 </head>
 <body>
+  <div id="notes-box" >
+    <div class="text-header">
+      <h1>Float and Alignment</h1>
+    </div>
   
+    <div class="notes"><h3><u>Notes:</u></h3>
+      <ol>
+        <li class="list-item"><b>Center and set width using container element</b>
+          <br>
+          <ul>
+            <br>
+            <li><b>EXAMPLE:&nbsp;&nbsp;</b><code>.container{
+              width: 960px;
+              margin: auto;
+            }</code></li>
+            <br>
+            <li>The container element wraps the div and acts on the whole.</li>
+            <br>
+            <li><code>margin: auto; &nbsp;&nbsp;</code> sets equal margin on both sides of the element</li>
+            <br>
+            <li>You may also use a measurement to set the top/bottom or left/right margin</li>
+            <li><b>EXAMPLE:&nbsp;&nbsp;</b><code>margin: 30 px auto;</code></li>
+            <br>
+            <li>Always use <code>max-width: </code> on the container. 
+              This helps when sizing the page for diffenet devices.</li>
+          </ul>
+        </li>
+  
+        <br>
+  
+        <li class="list-item"><b>Text alignment is by default to the "left". To align other ways, must use properties</b>
+          <br>
+          <ul>
+            <li><code>text-align: right;</code></li>
+            <li><code>text-align: center;</code></li>
+            <li><code>text-align: justify;</code> &nbsp; makes the text even across the element.</li>
+            <li>text alignment can also be used on the div to align everything.</li>
+          </ul>
+        </li>
+  
+        <br>
+  
+        <li class="list-item"><b>Floats (Old School) ***<u>Best Practice</u>*** is "Flexbox" and/or "CSS Grid"</b>
+          <br>
+          <ul>
+            <br>
+            <li>To float the element use the following code. </li>
+            <li>EXAMPLE: &nbsp;<code>#box-2 {
+              float: left;
+              width: 68%;
+            }</code></li>
+            <li>EXAMPLE &nbsp;<code>* {
+              box-sizing: border-box;
+            }</code></li>
+            <li>The two need used together to maintain proper distancing.</li>
+          </ul>
+        </li>
+  
+        <br>
+  
+        <li class="list-item"><b>Note Four</b>
+          <br>
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+  
+        <br>
+  
+      </ol>
+    </div>
+  </div>
+  
+
+  <div class="container">
+    <div id="box-1" class="box">
+      <h3>Heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, 
+        dolor quod? Culpa delectus laudantium alias placeat pariatur odio 
+        aperiam optio?</p>
+    </div>
+
+    <div id="box-2" class="box">
+      <h3>Heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, 
+        dolor quod? Culpa delectus laudantium alias placeat pariatur odio 
+        aperiam optio?</p>
+    </div>
+
+    <div id="box-3" class="box">
+      <h3>Heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, 
+        dolor quod? Culpa delectus laudantium alias placeat pariatur odio 
+        aperiam optio?</p>
+    </div>
+  </div>
 </body>
 </html>
