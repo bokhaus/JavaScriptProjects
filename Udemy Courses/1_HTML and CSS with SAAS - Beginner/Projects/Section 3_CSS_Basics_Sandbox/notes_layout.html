@@ -7,7 +7,7 @@
   <title>Inline & Block Styling</title>
   <style>
 
-    body {
+body {
       font-family: Arial, Helvetica, sans-serif;
       background-color: grey;
     }
@@ -21,13 +21,33 @@
     }
 
     #container-2 {
-      border: 2px solid;
+      background: black;
+      border: 5px solid rgb(117, 11, 32);
+      color: #ceb7b7;
+      font-family: Arial, Helvetica, sans-serif;
       margin: 30px auto;
-      background: #c7a0a0;
+      padding: 10px;
     }
 
     #container-2 a {
       color: rgb(117, 11, 32);
+    }
+
+    #container-2 li {
+      display: inline;
+    }
+
+    #container-2 li a{
+      padding-right: 20px;
+    }
+
+    #container-2 li a:hover{
+      text-decoration: underline;
+    }
+
+    #container-2 img{
+      display: block;
+      margin: auto;
     }
 
     #notes-header {
@@ -42,14 +62,31 @@
       color: #ceb7b7;
       border: 2px solid black;
       margin: 5px;
+      padding: 10px;
+    }
+
+    .before-after {
+      display: inline;      
+      box-sizing: border-box;
+    }
+
+    .before-after img{
+      width: 300px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
     }
 
     .footer {
       background: rgb(117, 11, 32);
       padding: 2px;
+      border-radius: 10px;
     }
 
     .footer-contact {
+      border-radius: 10px;
       background-color: black;
       color: #ceb7b7;
       text-align: center;
@@ -61,28 +98,26 @@
 
     .footer-contact a {
       color:  rgb(117, 11, 32);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      color:  teal;
+      text-decoration: underline;
     }
     
     h1, h3{
       text-align: center;
     }
 
-    a {
-      color: #ceb7b7;
-      text-decoration: none;
-    }
+    /* Demo CSS */
 
-    a:hover {
-      color:  teal;
-      
-    }
-    
   </style>
 </head>
 <body>
   <div id="top-main-notes">
     <div id="header-1">
-      <h1>Inline & Block Styling</h1>
+      <h1>Notes Template</h1>
     </div>
   
     <!-- Notes Section -->
@@ -91,57 +126,224 @@
       <div id="list-box">
         <div id="ol">
           <ol>
-            <h3>Header One</h3>
-            <li>
+            <h3>Header Item</h3>
+            <li><b><u>List Item</u></b>
               <br><br>
               <img src="" alt="">
+              <ul>
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                
+                <!-- CSS to display side by side -->
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+
+                <br><br>
+              </ul>
             </li>
-            <br>
-            <br>
-            <li>
+            
+            <li><b><u>List Item</u></b>
               <br><br>
               <img src="" alt="">
+              <ul>
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                
+                <!-- CSS to display side by side -->
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+
+                <br><br>
+              </ul>
             </li>
-            <br>
-            <br>
-            <li>
+            <li><b><u>List Item</u></b>
               <br><br>
               <img src="" alt="">
+              <ul>
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                
+                <!-- CSS to display side by side -->
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+
+                <br><br>
+              </ul>
             </li>
-            <br>
-            <br>
-            <li>
+            <li><b><u>List Item</u></b>
               <br><br>
               <img src="" alt="">
+              <ul>
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                
+                <!-- CSS to display side by side -->
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+
+                <br><br>
+              </ul>
             </li>
-            <br>
-            <br>
-            <h3>Header Two</h3>
-            <li>
-              <br><br>
-              <img src="" alt="">
-            </li>
-            <br>
-            <br>
-            <li>
-              <br><br>
-              <img src="" alt="">
-            </li>
-            <br>
-            <br>
-            <li>
-              <br><br>
-              <img src="" alt="">
-            </li>
-            <br>
-            <br>
-            <li>
-              <br><br>
-              <img src="" alt="">
-            </li>
-            <br>
-            <br>
+
           </ol>
+
+          <ol>
+            <h3>Header Item</h3>
+            <li><b><u>List Item</u></b>
+              <br><br>
+              <img src="" alt="">
+              <ul>
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                
+                <!-- CSS to display side by side -->
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+
+                <br><br>
+              </ul>
+            </li>
+            
+            <li><b><u>List Item</u></b>
+              <br><br>
+              <img src="" alt="">
+              <ul>
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                
+                <!-- CSS to display side by side -->
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+
+                <br><br>
+              </ul>
+            </li>
+            <li><b><u>List Item</u></b>
+              <br><br>
+              <img src="" alt="">
+              <ul>
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                
+                <!-- CSS to display side by side -->
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+
+                <br><br>
+              </ul>
+            </li>
+            <li><b><u>List Item</u></b>
+              <br><br>
+              <img src="" alt="">
+              <ul>
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                
+                <!-- CSS to display side by side -->
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+                <div class="before-after">
+                  <img src="" alt="">
+                </div>
+
+                <br><br>
+              </ul>
+            </li>
+          </ol> 
+          
         </div>
       </div>
     </div>
@@ -151,15 +353,16 @@
   <div id="container-2" >
     <h1>Demo</h1>
 
-    <br><br>
-  </div>
+    <!-- Demostrates Relative -->
+    <div id="box-1" class="box"></div>   
 
+  </div>  
+  
   <div class="footer">
     <footer class="footer-contact">
       <p>Author: Brian Bok&nbsp;&nbsp; <a href="mailto:brian.bokusmc@gmail.com">brian.bokusmc@gmail.com</a></p>
     </footer>
   </div>
-  
-    
+
 </body>
 </html>
