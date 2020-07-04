@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Menu Styling</title>
+  <style>
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: grey;
+    }
+    /* Notes and Footer CSS */
+    #container-1 {
+      background: rgb(117, 11, 32);
+      border: 1px solid #333333;
+      padding: 10px;
+      margin: 30px auto;
+      max-width: 960px;
+    }
+
+    #container-2 {
+      border: 2px solid;
+      margin: 30px auto;
+      background: #c7a0a0;
+    }
+
+    #notes-header {
+      background-color: black;
+      color: #ceb7b7;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    #ol {
+      background-color: black;
+      color: #ceb7b7;
+      border: 2px solid black;
+      margin: 5px;
+    }
+
+    .footer {
+      background: rgb(117, 11, 32);
+      padding: 2px;
+    }
+
+    .footer-contact {
+      background-color: black;
+      color: #ceb7b7;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 1px;
+      margin: 7px;
+    }
+
+    .footer-contact a {
+      color: cyan;
+    }
+    
+    h1, h3{
+      text-align: center;
+    }
+
+    a {
+      color: #ceb7b7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color:  rgb(117, 11, 32);
+      
+    }
+    
+    /* Navbar Styling */
+    .navbar {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background: #4c6ca0;
+      border-radius: 5px;
+      overflow: auto;
+    }
+
+  .navbar li {
+    float: left;
+  }
+
+    .navbar li a {
+      display: block;
+      color: #f4f4f4;
+      text-decoration: none;
+      padding: 15px 20px;
+    }
+
+    .navbar li a:hover {
+      background-color: #446190;
+      color: #f4f4f4;
+    }
+
+    /* Side Menu Styling */
+    .side-menu {
+      list-style: none;
+      border: 1px #ddd solid;
+      border-radius: 10px;
+      width: 65px;
+      padding: 20px;
+      margin: 50px;
+    }
+
+    .side-menu li {
+      font-size: 18px;
+      line-height: 2.4em;
+      border-bottom: dotted 1px #ddd;
+    }
+
+    .side-menu li:last-child {
+      border: none;
+    }
+
+    .side-menu li a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .side-menu li a:hover {
+      color: coral;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="top-main-notes">
+    <div id="header-1">
+      <h1>Menu Styling</h1>
+    </div>
+  
+    <!-- Notes Section -->
+    <div id="container-1" class="container">
+      <div id="notes-header"><b>Notes:</b></div>
+      <div id="list-box">
+        <div id="ol">
+          <ol>
+            <h3>Navigation Bar</h3>
+            <li>Create the parent CSS 
+              <br><br>
+              <img src="./static/images/ParentCSSNavbar.JPG" alt="parent css navbar">
+            </li>
+            <br>
+            <br>
+            <li>Create float CSS for list items
+              <br><br>
+              <img src="./static/images/FloatListItems.JPG" alt="float list items css">
+              <ul>
+                <li>must be set to float and then set padding on the list item &lt;a&gt; tag</li>
+              </ul>
+            </li>
+            <br>
+            <br>
+            <li>Set Attribuutes for links
+              <br><br>
+              <img src="./static/images/SetAttributesForLinkMain.JPG" alt="a tag attributes">
+              <ul>
+                <li>Make sure to set &nbsp;[<code>display: block</code>]</li>
+                <li>set padding here and not the li , or the padding will not cover the 
+                  whole element when selecting.</li>
+              </ul>
+            </li>
+            <br>
+            <br>
+            <li>Set hover attributes
+              <br><br>
+              <img src="./static/images/Navbar_li_a_Hover.JPG" alt="hover attribute styling">
+            </li>
+            <br>
+            <br>
+            <li>Final Version Styling for Navbar
+              <br><br>
+              <img src="./static/images/FinalVersionNavbar.JPG" alt="complete CSS styling for navbar">
+            </li>
+            <br><br>
+
+            <h3>Side Menu</h3>
+            <li>To create a stylized menu first create an unordered list and add links.
+              <br><br>
+              <img src="./static/images/CreateUnorderedList.JPG" alt="create unordered list">
+            </li>
+            <br>
+            <li>Stylize the unordered list. (remove list marker by using <code>list-style: none;</code>)
+              <br><br>
+              <img src="./static/images/SideMenuAttr.JPG" alt="side item attributes">
+            </li>
+            <br>
+            <li>Add styling to li in the side-menu
+              <br><br>
+              <img src="./static/images/ListItemStyling.JPG" alt="list item styling">
+            </li>
+            <br>
+            <li>You may choose to remove the last border in the menu by using psuedo selector
+              <br><br>
+              <img src="./static/images/PsuedoSelectorLastChild.JPG" alt="psuedo code last child">
+              <br><br>
+              <p>Bottom border removed.</p> 
+              <img src="./static/images/LastChildBorderRemoved.JPG" alt="last child removed" width="300px">
+            </li>
+            <br>
+            <br>
+            <li>You may remove/set attributes to other elements in the unorder list
+              <br><br>
+              <img src="./static/images/SetAttrOnElements.JPG" alt="set attributes on elements inside unordered list">
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Code Demo Section -->
+  <div id="container-2" >
+    <h1>Demo</h1>
+
+    <!-- Side Menu -->
+    <ul class="navbar">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <br><br>
+    <!-- Side Menu -->
+    <ul class="side-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+      
+
+    <br><br>
+  </div>
+
+  <div class="footer">
+    <footer class="footer-contact">
+      <p>Author: Brian Bok&nbsp;&nbsp; <a href="mailto:brian.bokusmc@gmail.com">brian.bokusmc@gmail.com</a></p>
+    </footer>
+  </div>
+  
+    
+</body>
+</html>

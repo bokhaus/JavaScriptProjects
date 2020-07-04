@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Inline & Block Styling</title>
+  <style>
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: grey;
+    }
+    /* Notes and Footer CSS */
+    #container-1 {
+      background: rgb(117, 11, 32);
+      border: 1px solid #333333;
+      padding: 10px;
+      margin: 30px auto;
+      max-width: 960px;
+    }
+
+    /* #container-1 img{
+      width: 300px;
+    } */
+
+    #container-2 {
+      border: 2px solid;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 30px auto;
+      background: #c7a0a0;
+    }
+
+    #container-2 a {
+      color: rgb(117, 11, 32);
+    }
+
+    #container-2 li {
+      display: inline;
+    }
+
+    #container-2 li a{
+      padding-right: 20px;
+    }
+
+    #container-2 li a:hover{
+      text-decoration: underline;
+    }
+
+    #container-2 img{
+      display: block;
+      margin: auto;
+    }
+
+    #container-2 #box{
+      width: 32.8%;
+      display: inline-block;      
+      box-sizing: border-box;
+      background: #f4f4f4;
+      padding: 20px;
+      margin-bottom: 15px;
+    }
+
+    #notes-header {
+      background-color: black;
+      color: #ceb7b7;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    #ol {
+      background-color: black;
+      color: #ceb7b7;
+      border: 2px solid black;
+      margin: 5px;
+    }
+
+    .footer {
+      background: rgb(117, 11, 32);
+      padding: 2px;
+    }
+
+    .footer-contact {
+      background-color: black;
+      color: #ceb7b7;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 1px;
+      margin: 7px;
+    }
+
+    .footer-contact a {
+      color:  rgb(117, 11, 32);
+    }
+    
+    h1, h3{
+      text-align: center;
+    }
+
+    a {
+      color: #ceb7b7;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color:  teal;
+      
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="top-main-notes">
+    <div id="header-1">
+      <h1>Inline & Block Styling</h1>
+    </div>
+  
+    <!-- Notes Section -->
+    <div id="container-1" class="container">
+      <div id="notes-header"><b>Notes:</b></div>
+      <div id="list-box">
+        <div id="ol">
+          <ol>
+            <h3>Header One</h3>
+            <li>By default, list items are block level elements.
+              <ul>
+                <br>
+                <li>The element goes entirly across the page and knocks the next element 
+                  down to the next line.</li>
+                <br>
+                <li>This is a way to create a horizontal menu.</li>
+              </ul>
+            </li>
+            <br>
+            <br>
+            <li>To create horizontal menu do the following:
+              <ul>
+                <li>Set the li attribute to <code>li {display: inline;}</code></li>
+                <li>Here, the demo container-2 is where we are working</li>
+                <br>
+                <img src="./static/images/HorizontalLIInline.JPG" alt="set li to inline">
+              </ul>
+            </li>
+            <br>
+            <br>
+            <li>Set Padding between the links
+              <br><br>
+              <img src="./static/images/SetPaddingLiA.JPG" alt="set padding on list item <a> tag">
+            </li>
+            <br>
+            <br>
+            <li>When using an inline image to make it a block level item to allow for 
+              margin setting, set the attribute to <code></code>
+              <br><br>
+              <img src="./static/images/ImageBlock.JPG" alt="set image to block attribute">
+            </li>
+            <br>
+            <br>
+            
+            <h3>Divs</h3>
+            <li>Display div's beside each other
+              <ul>
+                <br>
+                <li>Create several Divs</li>
+                <img src="./static/images/Divs.JPG" alt="div example" width='600'>
+              </ul>
+            </li>
+            <br>
+            <br>
+
+            <li>Set atttributes as follows:
+              <ul>
+                <li>Percentage of width to fit the boxes across</li>
+                <li>Display type</li>
+                <li>And box-sizing</li>
+                <br>
+                <img src="./static/images/DivBoxSizing.JPG" alt="box attributes">
+                
+                <br><br> Final version<br>
+                
+                <img src="./static/images/FinalDivInLineBlock.JPG" alt="final look of inline block" width="600px">
+              </ul>
+              <br><br>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Code Demo Section -->
+  <div id="container-2" >
+    <h1>Demo</h1>
+    <div>
+      <ul>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Business</a></li>
+        <li><a href="#">Fashion</a></li>
+      </ul>
+    </div>
+    
+    <br><br>
+
+    <img src="./static/images/leaf.png" alt="leaf image">
+
+    <br><br>
+
+    <!-- Working -->
+    <div id="box">
+      <h3>Heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti doloribus 
+        alias molestias suscipit distinctio consequatur quod adipisci optio praesentium 
+        aliquid!</p>
+
+      <br><br>
+    </div>
+    <div id="box">
+      <h3>Heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti doloribus 
+        alias molestias suscipit distinctio consequatur quod adipisci optio praesentium 
+        aliquid!</p>
+
+      <br><br>
+    </div>
+    <div id="box">
+      <h3>Heading</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti doloribus 
+        alias molestias suscipit distinctio consequatur quod adipisci optio praesentium 
+        aliquid!</p>
+
+      <br><br>
+    </div>
+  </div>
+
+  <div class="footer">
+    <footer class="footer-contact">
+      <p>Author: Brian Bok&nbsp;&nbsp; <a href="mailto:brian.bokusmc@gmail.com">brian.bokusmc@gmail.com</a></p>
+    </footer>
+  </div>
+  
+    
+</body>
+</html>

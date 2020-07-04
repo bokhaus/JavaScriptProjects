@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Box Model / Margin & Padding</title>
+  <style>
+    /* CSS Reset for whole page*/
+    /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    } */
+
+    /* CSS Reset for divs with class 'box' */
+    .box * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      background-color: #f4f4f4;
+      border: 2px #777 solid;
+      width: 500px;
+
+      /* Padding on all sides */
+      padding: 20px;
+
+      /* Margin on all sides */
+      margin: 20px;
+
+      /* Padding per side */
+      padding-top: 10px;
+      padding-right: 20px;
+      padding-bottom: 10px;
+      padding-left: 20px;
+
+
+      /* Padding Shorthand = top, right, bottom, left*/
+      padding: 10px 20px 10px 20px;
+
+      /* Padding shorthand top/bottom left/right */
+      padding: 10px 20px;
+    }
+
+    
+
+
+    /* .box p {
+      margin: 0;
+    } */
+
+  </style>
+</head>
+<body>
+  <!-- Notes Section -->
+  <div>
+    <h1>Box Model / Margin & Padding</h1>
+  </div>
+
+  <div><h3><u>Notes:</u></h3>
+    <ol>
+      <li><b>Margin and Padding</b><br>
+        <br>
+        <ul>
+          <li>Margin is the outside of the element</li>
+          <li>Padding is the inside of the element</li>
+          <br>
+          <img src="./static/images/margin_padding.JPG" alt="margin_padding" height="300">
+          <br><br>
+          <li>You can change margin by using<i><b> - margin: 0;</b></i></li>
+          <br>
+          
+         </ul>
+      </li>
+
+      <br>
+
+      <li><b>CSS Reset</b> - resets <u><b>ALL</b></u> margin and padding witin the designated area.
+        <code><br>
+          <br>
+          <b>
+          * { <br>
+            &nbsp; margin: 0; <br>
+            &nbsp; padding: 0; <br>
+          }</b>
+        </code>
+      </li>
+
+      <br>
+
+      <li><b>If resetting the entire element, You MUST use margin and padding setting as default are cleared</b>
+        <br>
+        <ul>
+          <li>You may also use padding on specified sides</li>
+          <br>
+          <img src="./static/images/Padding vaious uses.JPG" alt="padding various uses" height="300">
+          <br><br>
+          <h3>*** This applies to both Padding and Margin ***</h3>
+          <li>Property order matters if using shorthand method to set padding / margin</li>
+          <br>
+          <li>/* Padding Shorthand = top, right, bottom, left*/</li>
+          
+          <li><b>EXAMPLE:</b><code> &nbsp;padding: 10px 20px 10px 20px;</code></li>
+          <br><br>
+          <li>/* Padding shorthand top/bottom left/right */</li>
+          <li><b>EXAMPLE:</b><code> &nbsp;padding: 10px 20px;</code></li>
+        </ul>
+      </li>
+      
+      <br>
+
+      <li><b>Property Order</b>
+        <br>
+        <ul>
+          <li>Duplicate properties which are further down the list override the ones higher up the list</li>
+          <li></li>
+        </ul>
+      </li>
+
+      <br>
+
+    </ol>
+  </div>
+  
+  <hr><br>
+
+  <!-- Coding Practice Section -->
+  <div class="box">
+    <h3>Box One</h3>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas nesciunt 
+    totam eaque, molestias cumque unde? Voluptatem quis voluptates placeat odio.</p>
+  </div>
+  <div class="box">
+    <h3>Box Two</h3>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas nesciunt 
+    totam eaque, molestias cumque unde? Voluptatem quis voluptates placeat odio.</p>
+  </div>
+</body>
+</html>

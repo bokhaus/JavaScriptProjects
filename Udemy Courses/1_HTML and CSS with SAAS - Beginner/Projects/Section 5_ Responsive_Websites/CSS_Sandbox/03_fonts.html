@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Piedra&family=Roboto&display=swap" rel="stylesheet">
+  <title>Fonts</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.6em;
+    } 
+
+   /* Use a different font from an outside source
+   See link above from font.google.com - Using Roboto */
+   /* body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.6em;
+   } */
+
+   /* Another font to test  'Piedra'*/
+   /* body {
+    font-family: 'Piedra', cursive;
+   } */
+
+  /* Targeting the span tag in each div */
+  #welcome p span {
+    font-weight: bold;
+  }
+
+  #about p span {
+    font-weight: bolder;
+    font-style: italic;
+  }
+  </style>
+</head>
+<body>
+  <div id="welcome">
+    <!-- using class to set the color -->
+    <h2 class="primary-heading">Welcome!</h2>
+    <p>Lorem ipsum dolor sit amet <span>consectetur adipisicing elit. Vitae non aperiam 
+      veniam cum nihil? Eum doloremque tempora</span> tempore necessitatibus libero.</p>
+    </div>
+
+    <div id="about">
+      <h2 >About</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <span>Voluptatum 
+        reiciendis esse est fuga</span> inventore veritatis eligendi dolorem, ullam 
+        velit tempore?</p>
+    </div>
+</body>   
+</body>
+</html>

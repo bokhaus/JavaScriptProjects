@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Positioning</title>
+  <style>
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: grey;
+    }
+    /* Notes and Footer CSS */
+    #container-1 {
+      background: rgb(117, 11, 32);
+      border: 1px solid #333333;
+      padding: 10px;
+      margin: 30px auto;
+      max-width: 960px;
+    }
+
+    #container-2 {
+      height: 900px;
+      background: black;
+      border: 5px solid rgb(117, 11, 32);
+      color: #ceb7b7;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 30px auto;
+      padding: 10px;
+    }
+
+    #container-2 a {
+      color: rgb(117, 11, 32);
+    }
+
+    #container-2 li {
+      display: inline;
+    }
+
+    #container-2 li a{
+      padding-right: 20px;
+    }
+
+    #container-2 li a:hover{
+      text-decoration: underline;
+    }
+
+    #container-2 img{
+      display: block;
+      margin: auto;
+    }
+
+    #notes-header {
+      background-color: black;
+      color: #ceb7b7;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    #ol {
+      background-color: black;
+      color: #ceb7b7;
+      border: 2px solid black;
+      margin: 5px;
+      padding: 10px;
+    }
+
+    .before-after {
+      display: inline;      
+      box-sizing: border-box;
+    }
+
+    .before-after img{
+      width: 300px;
+    }
+
+    .footer {
+      background: rgb(117, 11, 32);
+      padding: 2px;
+      border-radius: 10px;
+    }
+
+    .footer-contact {
+      border-radius: 10px;
+      background-color: black;
+      color: #ceb7b7;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 1px;
+      margin: 7px;
+    }
+
+    .footer-contact a {
+      color:  rgb(117, 11, 32);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      color:  teal;
+      text-decoration: underline;
+    }
+    
+    h1, h3{
+      text-align: center;
+    }
+
+    /* Demo CSS */
+
+    .box {
+      width: 100px;
+      height: 100px;
+    }
+
+    .container-demo {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      background: #333333;
+    }
+
+    #box-1 {
+      position: relative;
+      top: 50px;
+      left: 50px;
+      background: red;
+      z-index: 1;
+    }
+
+    #box-2 {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      background:yellow;
+    }
+
+    #box-3 {
+      position: absolute;
+      top: 100px;
+      right: 100px;
+      background: green;
+    }
+
+    #box-4 {
+      position: fixed;
+      background: blue;
+    }
+
+    #box-5 {
+      position: sticky;
+      top: 0;
+      background: orange;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div id="top-main-notes">
+    <div id="header-1">
+      <h1>CSS Positioning</h1>
+    </div>
+  
+    <!-- Notes Section -->
+    <div id="container-1" class="container">
+      <div id="notes-header"><b>Notes:</b></div>
+      <div id="list-box">
+        <div id="ol">
+          <ol>
+            <h3>Positioning</h3>
+            <li> <b><u>Position by default is 'static'.</u></b>
+              <br><br>
+              <img src="./static/images/PositionValues.JPG" alt="position values" width="600px">
+              <br><br>
+              <li>Not typically used in modern wed development. Does not work well on mobile devices.</li>
+            </li>
+            <br>
+            <br>
+            <li><b><u>Relative Positioning</u></b>
+              <br><br>
+              <img src="./static/images/Relative.JPG" alt="relative positioning">
+              <ul>
+                <br>
+                <li>You can move the element by using tblr (top, bottom, left, right)</li>
+                <br>
+                <li>By setting the element to relative, and adjusting the top and left positions it will move the div to the specified position.</li>
+                <br>
+                <li>Relative to the parent element.</li>
+                <br>
+                <li>To bring an elemenet in front of another use 
+                  <code>&nbsp; z-idex: 1; &nbsp;</code>
+                the higher the number the greater importance.</li>
+                
+                <!-- CSS to display side by side -->
+                <div class="before-after">
+                  <img src="./static/images/z-idex.JPG" alt="z index before" >
+                </div>
+                <div class="before-after">
+                  <img src="./static/images/z-idex1.JPG" alt="z index after">
+                </div>
+                <br><br>
+
+              </ul>
+            </li>
+            <br>
+            <br>
+            <li><b><u>Absolute Positioning</u></b>  - How it is positioned relative to the parent element.
+              <br><br>
+              <ul>
+                <li>Boxes 2 and 3 are inside of a div with a class of container-3. </li>
+                <img src="./static/images/AbsoluteParent.JPG" alt="absolute div">
+                <br><br>
+                <li>CSS attributes are set to move the elements within the parent div. 
+                  But the parent element must be set to relative to accomplish this.</li>
+                <img src="./static/images/AbsoluteCSS-one.JPG" alt="parent set to relative">
+                <br><br>
+                <li>Now, the CSS for box-2 is set to abosolute and top/left attributes are set.</li>
+                <img src="./static/images/AbsoluteBox2Yellow.JPG" alt="css box two yellow">
+                <br><br>
+                <li>Box-3 CSS is then set.</li>
+                <img src="./static/images/AbsoluteBox3Green.JPG" alt="css box two yellow">
+                <br><br>
+                <li>Outcome before/after CSS</li>
+
+                <!-- CSS to display side by side -->
+                <div class="before-after">
+                  <img src="./static/images/AbsoluteBeforeCSS.JPG" alt="element before" >
+                </div>
+                <div class="before-after">
+                  <img src="./static/images/AbsoluteAfterCSS.JPG" alt="element after">
+                </div>
+                <br><br>
+              </ul>
+            </li>
+            <br>
+            <br>
+
+            <li><b><u>Fixed Positioning</u></b> 
+              <br><br>
+              <ul>
+                <li>Holds the position of the element in one place (fixed on the page)</li>
+                <img src="./static/images/fixed-positioning.JPG" alt="fixed">
+                <br>
+                <li>This function is not working in the current demo.</li>
+                <img src="" alt="">
+                <br>
+              </ul>
+            </li>
+            <br>
+            <br>
+
+            <li><b><u>Sticky Positioning</u></b>
+              <br><br>
+              <ul>
+                <li>Similar to Fixed but sticks in a certain spot.</li>
+                <img src="" alt="">
+                <br>
+                <li>Used mostly for (nav) menus where you want the menu to stick to the top.</li>
+                <img src="" alt="">
+                <br>
+                <li>This function is not working in the current demo.</li>
+                <img src="./static/images/sticky.JPG" alt="sticky css">
+                <br>
+              </ul>
+            </li>
+            <br>
+            <br>
+
+<!--             
+            <h3>Header Item</h3>
+            <li>List Item
+              <br><br>
+              <img src="" alt="">
+              <br><br>
+              <img src="" alt="">
+              <ul>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+              </ul>
+            </li>
+            <br>
+            <br>
+            <li>List Item
+              <br><br>
+              <img src="" alt="">
+              <br><br>
+              <img src="" alt="">
+              <ul>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+              </ul>
+            </li>
+            <br>
+            <br>
+            <li>List Item
+              <br><br>
+              <img src="" alt="">
+              <br><br>
+              <img src="" alt="">
+              <ul>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+              </ul>
+            </li>
+            <br>
+            <br>
+            <li>List Item
+              <br><br>
+              <img src="" alt="">
+              <br><br>
+              <img src="" alt="">
+              <ul>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+                <li></li>
+                <img src="" alt="">
+                <br>
+              </ul>
+            </li>
+            <br>
+            <br>
+          </ol>
+           -->
+
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Code Demo Section -->
+  <div id="container-2" >
+    <h1>Demo</h1>
+
+    <!-- Demostrates Relative -->
+    <div id="box-1" class="box"></div>   
+    
+    <!-- Demostrates Absolute Positioning-->
+    <div class="container-demo">   
+      <div id="box-2" class="box"></div>
+      <div id="box-3" class="box"></div>
+    </div>
+
+    <div id="box-4" class="box"></div>   <!-- Demostrates Fixed-->
+    <div id="box-5" class="box"></div>   <!-- Demostrates -->
+  </div>  
+  
+  <div class="footer">
+    <footer class="footer-contact">
+      <p>Author: Brian Bok&nbsp;&nbsp; <a href="mailto:brian.bokusmc@gmail.com">brian.bokusmc@gmail.com</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
