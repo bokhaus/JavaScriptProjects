@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visibiltity, Order and Negative Margin</title>
+</head>
+<style>
+
+    body {
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: grey;
+        }
+
+        /* Notes and Footer CSS */
+        #container-1 {
+          background: rgb(117, 11, 32);
+          border: 1px solid #333333;
+          padding: 10px;
+          margin: 30px auto;
+          max-width: 960px;
+        }
+
+        .big-img img{
+          width: 700px;
+        }
+    
+        #container-2 {
+          background: black;
+          border: 5px solid rgb(117, 11, 32);
+          color: #ceb7b7;
+          font-family: Arial, Helvetica, sans-serif;
+          height: 500px;
+          margin: 30px auto;
+          padding: 10px;
+        }
+    
+        #container-2 a {
+          color: rgb(117, 11, 32);
+        }
+    
+        #container-2 li {
+          display: inline;
+        }
+    
+        #container-2 li a{
+          padding-right: 20px;
+        }
+    
+        #container-2 li a:hover{
+          text-decoration: underline;
+        }
+
+        /* Precedence */
+        /* h3 {
+            color: blue !important;
+        } */
+
+        .hello {
+            color: red;
+            margin-top: -30px;
+            margin-left: -30px;
+        }    
+
+        #container-2 img{
+          display: block;
+          margin: auto;
+        }
+    
+        #notes-header {
+          background-color: black;
+          color: #ceb7b7;
+          padding: 10px;
+          margin: 5px;
+        }
+    
+        #ol {
+          background-color: black;
+          color: #ceb7b7;
+          border: 2px solid black;
+          margin: 5px;
+          padding: 10px;
+        }
+    
+        .before-after {
+          display: inline;      
+          box-sizing: border-box;
+        }
+    
+        .before-after img{
+          width: 300px;
+          height: 100px;
+        }
+    
+        .box {
+          width: 100px;
+          height: 100px;
+        }
+    
+        .footer {
+          background: rgb(117, 11, 32);
+          padding: 2px;
+          border-radius: 10px;
+        }
+    
+        .footer-contact {
+          border-radius: 10px;
+          background-color: black;
+          color: #ceb7b7;
+          text-align: center;
+          font-size: 15px;
+          font-weight: bold;
+          padding: 1px;
+          margin: 7px;
+        }
+    
+        .footer-contact a {
+          color:  rgb(117, 11, 32);
+          text-decoration: none;
+        }
+    
+        .footer-contact a:hover {
+          color:  teal;
+          text-decoration: underline;
+        }
+        
+        h1, h3{
+          text-align: center;
+        }
+    
+        /* Demo CSS */
+    
+      </style>
+    </head>
+    <body>
+      <div id="top-main-notes">
+        <div id="header-1">
+          <h1>Visibiltity, Order and Negative Margin</h1>
+        </div>
+      
+        <!-- Notes Section -->
+        <div id="container-1" class="container">
+          <div id="notes-header"><b>Notes:</b></div>
+          <div id="list-box">
+            <div id="ol">
+              <ol>
+                <h3>Additional Document Editing Options</h3>
+                <li><b>display: none;</b>
+                  <br>
+                  <img src="./static/images/display_none_visibility_hidden.JPG" alt="display hidden">
+                  <ul>
+                    <br>
+                    <li>This CSS style is used to remove elements as needed</li>
+                    <br>
+                    <li>Used more often than (visibility: none;</li>
+                    <br>
+                    <li>Used for responsive websites.</li>
+                    
+                    <br>
+                    <li><u>Removes the element/object from the DOM (Data Object Model)</u></li>
+
+                    <!-- CSS to display side by side -->
+                    <div class="before-after">
+                        <img src="./static/images/display_none_demo_1.JPG" alt="display element">
+                    </div>
+                    
+                    <div class="before-after">
+                        <img src="./static/images/display_none_demo_2.JPG" alt="display none">
+                    </div>
+
+                    <br>
+                    <li>May also use (visibility: hidden;) <u>but only hides the element</u>. Makes invisible.</li>
+                    
+                    <br><br>
+                  </ul>
+                </li>
+                
+                <li><b><u>Order of Precedence</u></b>
+                  <ul>
+                    <br>
+                    <li>Normally, the order of prcedence is determined by its location in the CSS style. The further down the CSS list the attribute is the higher the precedence.</li>
+                    <ul>
+                        <br>
+                        <li>If a class of an element and the element are called separately, the class takes precedence.</li>
+                    </ul>
+                    
+                    <br>
+                    <div class="big-img"><img src="./static/images/h3_color_blue.JPG" alt="h3 color blue"></div>
+                    <br>
+                    <div class="big-img"><img src="./static/images/h3_color_red.JPG" alt="h3 red"></div>
+                    <br><br>
+                    <li>In other words, targeting a class overides the element.</li>
+                    <br>
+                    <li>To override a specific style with another style, use the [<code>!important</code>] flag.</li>
+                    <br>
+                    <img src="./static/images/ImportantFlag.JPG" alt="important flag">
+                    <br><br>
+                  </ul>
+                </li>
+                <li><b><u>Negative Margin</u></b>
+                  <ul>
+                    <br>
+                    <li>Avoid negative margin if at all possible. But it is technically able to be done.</li>
+                    <img src="" alt="">
+                    <br>
+                    <li>This is a way to move elements inward as opposed to out.</li>
+                    <img src="" alt="">
+                    <br>
+                    <li>Cannot be done with padding though.</li>
+                    <br>
+                    <img src="./static/images/NegativeMargin.JPG" alt="negative margin">
+                    <br>
+                    
+                    <!-- CSS to display side by side -->
+                    <div class="before-after">
+                      <img src="" alt="">
+                    </div>
+                    <div class="before-after">
+                      <img src="" alt="">
+                    </div>
+    
+                    <br><br>
+                  </ul>
+                </li>
+                
+    
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>  
+    
+      <!-- Code Demo Section -->
+      <div id="container-2" >
+        <h1>Demo</h1>
+        <hr>
+        <br><br>
+        <!-- Demo the concepts -->
+        <h3 class="hello">Hello World</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque doloribus 
+            voluptate laboriosam perspiciatis suscipit tenetur corporis possimus 
+            maiores explicabo laborum.</p>
+    
+      </div>  
+      
+      <div class="footer">
+        <footer class="footer-contact">
+          <p>Author: Brian Bok&nbsp;&nbsp; <a href="mailto:brian.bokusmc@gmail.com">brian.bokusmc@gmail.com</a></p>
+        </footer>
+      </div>
+    
+    </body>
+    </html>
