@@ -143,19 +143,18 @@ body {
       <div id="list-box">
         <div id="ol">
           <ol>
-            <h3>Header Item</h3>
-            <li><b><u>List Item</u></b>
-              <br><br>
+            <h3>Media Query - Overview</h3>
+            <li><b><u>"Mobile-First" Design</u></b>
               <img src="" alt="">
               <ul>
                 <br>
-                <li></li>
+                <li>Design the page/app for use on a phone first</li>
                 <img src="" alt="">
                 <br>
-                <li></li>
+                <li>This many require that less information is presented.</li>
                 <img src="" alt="">
                 <br>
-                <li></li>
+                <li>"Mobile-First" designing. - Design so it looks good on a phone before any other device.</li>
                 <img src="" alt="">
                 <br>
                 
@@ -171,21 +170,23 @@ body {
               </ul>
             </li>
             
-            <li><b><u>List Item</u></b>
-              <br><br>
+            <li><b><u>Media Query Code and Layout</u></b>
               <img src="" alt="">
               <ul>
                 <br>
-                <li></li>
+                <li>Media queries can be set for both height and/or width.</li>
+                <br>
+                <img src="./static/images/Media-Queries.JPG" alt="media query layout">
+                <br>
+                <li>Smartphone typically under 500px width</li>
                 <img src="" alt="">
                 <br>
-                <li></li>
+                <li>In "Mobile-First" designing - set-up the design so it looks good on a mobile device first and then add min-width.</li>
                 <img src="" alt="">
                 <br>
-                <li></li>
-                <img src="" alt="">
+                <li><code>only screen and (max-width: 500px)</code> means the width only applies to screens (a media type).</li>
                 <br>
-                
+                <li>Other options could be voice (speech) or print and speech. (Default is ALL).</li>
                 <!-- CSS to display side by side -->
                 <div class="before-after">
                   <img src="" alt="">
@@ -197,170 +198,39 @@ body {
                 <br><br>
               </ul>
             </li>
-            <li><b><u>List Item</u></b>
+            <li><b><u>Disable and enable h1 headers to correspond with each media query.</u></b>
               <br><br>
-              <img src="" alt="">
+              
               <ul>
                 <br>
-                <li></li>
+                <li>Notice the h1 is disabled initially nad the as the media query is realized the h1 on corresponding to the query is displayed.</li>
+                <br><br>
+                <img src="./static/images/Media-Queries2.JPG" alt="disable h1 based on media query">
+                <br><br>
+                <li>This trick could potentially be used to display different themes based on size of the screen. </li>
                 <img src="" alt="">
                 <br>
-                <li></li>
+                <li>Practical application for this is floating divs in larger screens and stacking divs on smaller screens.</li>
                 <img src="" alt="">
+                <li>You may create style sheets for each type of media query. 
+                  <ul>
+                    <li>smarthphone.css</li>
+                    <li>tablet.css</li>
+                    <li>laptop.css</li>
+                  </ul>
+                </li>
+                <br><br>
+                <li>For example....</li>
                 <br>
-                <li></li>
-                <img src="" alt="">
+                <img src="./static/images/mediaStylesheet.JPG" alt="media stylesheet" width="550px">
+                <br><br>
+                <li> In the above case, the stylesheet will only be used / active when the screen size is 768px or less.</li>
                 <br>
-                
-                <!-- CSS to display side by side -->
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-
+                <li>Must use the media attribute in the link. </li>
                 <br><br>
               </ul>
             </li>
-            <li><b><u>List Item</u></b>
-              <br><br>
-              <img src="" alt="">
-              <ul>
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                
-                <!-- CSS to display side by side -->
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-
-                <br><br>
-              </ul>
-            </li>
-
           </ol>
-
-          <ol>
-            <h3>Header Item</h3>
-            <li><b><u>List Item</u></b>
-              <br><br>
-              <img src="" alt="">
-              <ul>
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                
-                <!-- CSS to display side by side -->
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-
-                <br><br>
-              </ul>
-            </li>
-            
-            <li><b><u>List Item</u></b>
-              <br><br>
-              <img src="" alt="">
-              <ul>
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                
-                <!-- CSS to display side by side -->
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-
-                <br><br>
-              </ul>
-            </li>
-            <li><b><u>List Item</u></b>
-              <br><br>
-              <img src="" alt="">
-              <ul>
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                
-                <!-- CSS to display side by side -->
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-
-                <br><br>
-              </ul>
-            </li>
-            <li><b><u>List Item</u></b>
-              <br><br>
-              <img src="" alt="">
-              <ul>
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                <li></li>
-                <img src="" alt="">
-                <br>
-                
-                <!-- CSS to display side by side -->
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-                <div class="before-after">
-                  <img src="" alt="">
-                </div>
-
-                <br><br>
-              </ul>
-            </li>
-          </ol> 
-      
         </div>
       </div>
     </div>
