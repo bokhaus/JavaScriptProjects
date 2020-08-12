@@ -1,0 +1,14 @@
+.container-1 {
+  border: 5px solid green;
+  margin: 3px;
+  padding: 10px;
+}
+
+h3 {
+  color: green;
+}
+
+p {
+  color: green;
+  font-size: 16px;
+}

@@ -1,0 +1,14 @@
+.container-2 {
+  border: 5px solid red;
+  margin: 3px;
+  padding: 10px;
+}
+
+h3 {
+  color: red;
+}
+
+p {
+  color: red;
+  font-size: 16px;
+}
