@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1><b>Unit Two Sandbox</b></h1>
+      <br>
+      <br>
+      <h3>I'm the main AppComponent (<u>app.component.html</u>) </h3>
+      <hr>
+      <app-servers></app-servers>
+    </div>
+  </div>
+</div>
+
+
+
+<!--Notes
+* This page is loaded through the use of index.html using  <app-root> </app-root> tag.
+AND
+app.component.ts where
+
+@Component({
+  selector: 'app-root',                 <---- app-root
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+using script imports which are injected into the index.html file (*see "view page source" on webpage)
+
+<body>
+  <app-root></app-root>
+<script src="runtime.js" defer></script>
+<script src="polyfills.js" defer></script>
+<script src="styles.js" defer></script>
+<script src="vendor.js" defer>
+</script><script src="main.js" defer></script>
+</body>
+
+
+Creating a custom component ****MANUALLY****
+1. Each component should have its own folder named for the component in the app folder.app-root
+2. naming convention is to use component name and then what is in the folder and end with .ts
+3. Example: server.component.ts
+4. A component is a typescript class so that  Angular is able to instantiate or create objects
+   based on the class blurprint.
+5. Angular uses components to build webpages and
+6. Modules to bundle pieces/component into packages
+7. Add in the app.module file - import {ServerComponent} from './server/server.component';
+8. And register the component
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import {ServerComponent} from './server/server.component';  <-- import the class
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ServerComponent                      <--register the Server component
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+CSS
+Use the component.css file for the specific component being styled
+-->
+

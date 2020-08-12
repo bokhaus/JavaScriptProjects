@@ -1,0 +1,16 @@
+<!--
+Make sure the program is not running and install
+
+To install bootstrap use in terminal window
+
+npm install --save bootstrap@3
+ 
+-AND-
+
+
+then insert into the angular.json file under architect/build/styles but before default css
+
+"node_modules/bootstrap/dist/css/bootstrap.min.css",
+
+start application using ng serve
+-->

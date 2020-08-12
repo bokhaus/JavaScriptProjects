@@ -1,0 +1,26 @@
+<!--
+ngModel is magic done behind the scenes
+It uses two-way data binding by using
+
+*app.module.ts *
+import {FormsModule} from '@angular/forms';
+-and-
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+
+* app.components.html (SEE BELOW) *
+
+AND
+
+* app.component.ts *
+
+export class AppComponent {
+  name = 'Brian';
+}
+
+to do the magic
+-->
+<input type="text" [(ngModel)]= "name"> <!--How to comment in Angular-->
+<p>{{name}}</p>

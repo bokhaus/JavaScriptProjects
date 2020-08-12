@@ -1,0 +1,15 @@
+In-line Template (define HTML code within typescript code)
+
+  //templateUrl: './servers.component.html',
+
+  /**
+   * Two types of template. Define in an external file (templateUrl:) as above
+   * OR
+   * in line as below (template:).
+   * More than three lines of HTML code use an external file
+   * Must have at least a template
+   */
+
+	template:`
+	  <app-server></app-server>
+	  <app-server></app-server>`,
